@@ -1,0 +1,44 @@
+.search input {
+    box-sizing: border-box;
+    padding: 12px;
+    gap: 10px;
+
+    width: 388px;
+    height: 36px;
+    border: 1px solid #C2C2C2;
+    border-radius: 100px;
+}
+
+.input-siswa {
+    gap: 24px;
+    height: 36px;
+}
+
+.tabel-siswa {
+    display: flex;
+    margin-top: 20px;
+    /* align-items: flex-start; */
+    /* gap: 12px; */
+    /* box-sizing: border-box; */
+    /* flex-direction: column; */
+
+    height: 458px;
+    border: 1px solid #E0E0E0;
+    border-radius: 20px;
+}
+
+.tabel-head {
+    display: flex;
+    align-items: center;
+    padding: 0px 14px;
+    gap: 12px;
+
+    height: 48px;
+    background: linear-gradient(90deg, #FFA8A8 0%, #FF6D6D 64.06%);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.tabel-siswa thead th {
+    width: 100vw;
+    color: #FFFFFF;
+}

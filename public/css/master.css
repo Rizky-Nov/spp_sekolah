@@ -1,0 +1,13 @@
+.atas {
+    height: 90px;
+    background: linear-gradient(90deg, #FFA8A8 0%, #FF6D6D 64.06%);
+}
+
+.header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 32px;
+    margin-top: 18px;
+    
+}
