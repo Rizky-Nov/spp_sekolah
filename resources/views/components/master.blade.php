@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/data-siswa.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/data-petugas.css') }}">
 
+
+    <livewire:styles />
 
     <title>{{ $master }} | SPP</title>
 </head>
@@ -34,17 +37,23 @@
                     </div>
                 </div>
             @else
-                <div class="col-10 d-flex flex-column" style="padding-top: 36px; padding-bottom: 36px; padding-right: 48px; padding-left: 16px;">
+                <div class="col-10 d-flex flex-column" style="padding-bottom: 36px; padding-right: 48px; padding-left: 16px;">
                     <div>
                         @include('layout.header')
                     </div>
 
-                    <div class="col" style="margin-top: 14px;">
+                    <div class="col" style="margin-top: 14px; padding-top: 36px; padding-bottom: 36px; padding-right: 48px; padding-left: 16px;">
                         {{ $slot }}
                     </div>
                 </div>
             @endif
         </div>
     </div>
+
+    <livewire:scripts />
+
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}">
+    
+    </script>
 </body>
 </html>

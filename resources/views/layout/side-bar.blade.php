@@ -1,8 +1,9 @@
 
     <link rel="stylesheet" href="{{ asset('css/side-bar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 
-<div class="col-2 sidebar-luar">
+<div class="col-2 sidebar-luar position-fixed">
     <div class="sidebar w-100 h-100">
         <div class="logo">
 
@@ -12,21 +13,22 @@
 
         <div class="menus-luar">
             <div class="menu-menu d-flex" style="gap: 12px;">
-                <a href="#" class="text-m-medium text-neutral-10 cursor-pointer">Dashboard</a>
+                <a href="/home" class="w-100 text-decoration-none text-m-medium text-neutral-10 cursor-pointer">Dashboard</a>
             </div>
 
             <div class="menu-menu d-flex flex-column" style="gap: 12px;">
-                <div class="d-flex">
-                    <a class="text-m-medium text-neutral-10 cursor-pointer" data-bs-toggle="collapse" data-bs-target="#dropdown-menu">Data Master</a>
+                <div class="d-flex flex-column w-100">
+                    <div class="w-100 bg-warning cursor-pointer" data-bs-toggle="collapse" data-bs-target="#data-data">
+                        <span class="text-neutral-10 text-m-medium">Data - Data</span>
+                    </div>
 
-                    <div class="collapse" id="dropdown-menu" >
-                    {{-- {{ Request::is('data') || Request::is('absen-bulanan') ? 'show' : '' }} --}}
-                         
-                        {{-- <a href="data">
+                    <div class="collapse w-100" id="data-data" {{ Request::is('data-siswa') || Request::is('data-petugas') ? 'show' : '' }}>
+                    
+                        <a href="/data-siswa">
                             <span class="text-m-regular text-neutral-10">Data Siswa</span>
                         </a>
                         
-                        <a href="#">
+                        <a href="/data-petugas">
                             <span class="text-m-regular text-neutral-10">Data Kelas</span>
                         </a>
                         
@@ -36,26 +38,26 @@
                         
                         <a href="#">
                             <span class="text-m-regular text-neutral-10">Data SPP</span>
-                        </a> --}}
+                        </a>
                     </div>
                 </div>
             </div>
             
             <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                 <div class="d-flex">
-                    <a class="text-m-medium text-neutral-10 cursor-pointer">Transaksi</a>
+                    <a class="text-m-medium text-decoration-none text-neutral-10 cursor-pointer">Transaksi</a>
                 </div>
             </div>
 
             <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                 <div class="d-flex">
-                    <a class="text-m-medium text-neutral-10 cursor-pointer">Catatan</a>
+                    <a class="text-m-medium text-decoration-none text-neutral-10 cursor-pointer">Catatan</a>
                 </div>
             </div>
 
             <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                 <div class="d-flex">
-                    <a class="text-m-medium text-neutral-10 cursor-pointer">Laporan</a>
+                    <a class="text-m-medium text-decoration-none text-neutral-10 cursor-pointer">Laporan</a>
                 </div>
             </div>
 

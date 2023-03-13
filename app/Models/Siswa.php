@@ -9,6 +9,8 @@ class Siswa extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function spp()
     {
         return $this->belongsTo(Spp::class);

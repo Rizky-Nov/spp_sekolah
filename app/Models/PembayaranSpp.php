@@ -9,6 +9,8 @@ class PembayaranSpp extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function petugas()
     {
         return $this->belongsTo(Petugas::class);

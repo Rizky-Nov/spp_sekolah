@@ -10,4 +10,6 @@ class AuthController extends Controller
     {
         return view('login.login');
     }
+
+    
 }

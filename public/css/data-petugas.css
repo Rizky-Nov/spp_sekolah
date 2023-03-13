@@ -9,12 +9,12 @@
     border-radius: 100px;
 }
 
-.input-siswa {
+.input-petugas {
     gap: 24px;
     height: 36px;
 }
 
-.tabel-siswa {
+.tabel-petugas {
     display: flex;
     margin-top: 20px;
     /* align-items: flex-start; */
@@ -27,18 +27,17 @@
     border-radius: 20px;
 }
 
-.tabel-head {
+.head-petugas {
     display: flex;
     align-items: center;
     padding: 0px 14px;
     gap: 12px;
-
     height: 48px;
     background: linear-gradient(90deg, #FFA8A8 0%, #FF6D6D 64.06%);
     border-radius: 20px 20px 0px 0px;
 }
 
-.tabel-head tr {
+.head-petugas tr {
     gap: 12px;
 }
 
@@ -55,17 +54,17 @@
     gap: 12px;
 }
 
-.tabel-siswa thead th {
+.tabel-petugas thead th {
     width: 100vw;
     color: #FFFFFF;
 }
 
-.tabel-siswa tbody td {
+.tabel-petugas tbody td {
     width: 100vw;
     height: 48px;
 }
 
-.buatsiswa {
+.buatpetugas {
     background: linear-gradient(90deg, #FFA8A8 0%, #FF6D6D 64.06%);
     width: 140px;
     border-radius: 14px;

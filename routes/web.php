@@ -20,3 +20,6 @@ Route::get('/', [AuthController::class, 'index']);
 
 Route::get('home', [PageController::class, 'Dashboard']);
 Route::get('data-siswa', [PageController::class, 'DataSiswa']);
+Route::get('data-petugas', [PageController::class, 'DataPetugas']);
+Route::get('data-spp', [PageController::class, 'DataSpp']);
+Route::get('data-kelas', [PageController::class, 'DataKelas']);
