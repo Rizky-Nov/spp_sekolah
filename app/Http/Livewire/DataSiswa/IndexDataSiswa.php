@@ -4,12 +4,22 @@ namespace App\Http\Livewire\DataSiswa;
 
 use App\Models\Siswa;
 use Livewire\Component;
+use App\Traits\ListenerTrait;
 
 class IndexDataSiswa extends Component
 {
+    use ListenerTrait;
+
     public $search;
+    public $siswa_id;
+    public $cek = true;
+    
     protected $queryString = [
         'search' => ['except' => '']
+    ];
+
+    protected $listeners = [
+        'deleteSiswa',
     ];
 
     public function render()
@@ -28,5 +38,19 @@ class IndexDataSiswa extends Component
     public function getSiswa($id)
     {
         $this->emit('getSiswa', $id);
+    }
+
+    public function deletecek($id)
+    {
+        $this->emit('swalConfirm', ['question', "Yakin Ingin Meghapus Data Ini !!", true, 'deleteSiswa', $id]);
+    }
+
+    public function deleteSiswa($id)
+    {
+        $siswa = Siswa::find($id);
+
+        if ($siswa) {
+            $siswa->delete();
+        }
     }
 }

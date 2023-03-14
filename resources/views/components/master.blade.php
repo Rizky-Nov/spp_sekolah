@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/data-siswa.css') }}">
     <link rel="stylesheet" href="{{ asset('css/data-petugas.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sweetAlert/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/toastify/toastify.min.css') }}">
 
 
     <livewire:styles />
@@ -55,5 +57,10 @@
     <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}">
     
     </script>
+    <script src="{{ asset('vendor/sweetAlert/sweetalert2.min.js') }}">
+    
+    </script>
+    @include('alert.sweet-alert')
+    @stack('scripts')
 </body>
 </html>

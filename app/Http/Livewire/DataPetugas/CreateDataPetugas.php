@@ -22,7 +22,7 @@ class CreateDataPetugas extends Component
     {
         $petugas = Petugas::create([
             'username' => $this->username,
-            'password' => $this->password,
+            'password' => bcrypt($this->password),
             'nama_petugas' => $this->namapetugas,
             'level_id' => 1,
         ]);

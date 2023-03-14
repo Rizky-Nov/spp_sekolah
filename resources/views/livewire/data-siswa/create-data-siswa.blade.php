@@ -25,10 +25,16 @@
             </div>
         </div>
 
-        
-        <div class="form-group w-100">
-            <label for="alamat">Alamat</label>
-            <textarea wire:model.lazy='alamat' class="w-100 p-2" id="alamat" rows="4" placeholder="masukkan alamat siswa lengkap"></textarea>
+        <div class="input-siswa col-12 w-100 d-flex">
+            <div class="form-group" style="width: 720px">
+              <label for="pw">Password</label>
+              <input type="text"  id="pw" class="form-control" placeholder="masukkan password siswa">
+            </div>
+
+            <div class="form-group w-100">
+                <label for="alamat">Alamat</label>
+                <input type="text" wire:model.lazy='alamat' class="form-control" placeholder="masukkan alamat siswa lengkap">
+            </div>
         </div>
 
         <div class="input-siswa col-12 w-100 d-flex">

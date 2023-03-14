@@ -4,7 +4,7 @@
     @if (Request::is('home'))
         <div class="col header">
             <div class="">
-                asd
+                <a href="/logout">Keluar</a>
             </div>
         </div>
     @else
@@ -15,7 +15,7 @@
 
             <div class="col header">
                 <div class="">
-                    asd
+                    <a href="/logout">Keluar</a>
                 </div>
             </div>
         </div>

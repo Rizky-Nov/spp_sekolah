@@ -15,21 +15,21 @@
 }
 
 .tabel-siswa {
-    display: flex;
-    margin-top: 20px;
+    /* display: flex; */
     /* align-items: flex-start; */
     /* gap: 12px; */
     /* box-sizing: border-box; */
     /* flex-direction: column; */
-
+    
+    margin-top: 20px;
     height: 458px;
     border: 1px solid #E0E0E0;
     border-radius: 20px;
 }
 
 .tabel-head {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     padding: 0px 14px;
     gap: 12px;
 
@@ -43,11 +43,11 @@
 }
 
 .tabel-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px 14px;
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: center; */
     /* gap: 12px; */
+    padding: 0px 14px;
     height: 48px;
 }
 
@@ -56,12 +56,12 @@
 }
 
 .tabel-siswa thead th {
-    width: 100vw;
+    /* width: 100vw; */
     color: #FFFFFF;
 }
 
 .tabel-siswa tbody td {
-    width: 100vw;
+    /* width: 100vw; */
     height: 48px;
 }
 

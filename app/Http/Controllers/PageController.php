@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Petugas;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
     public function Dashboard()
     {
-        return view('admin.dashboard');
+        if (Auth::guard('siswa')->check()) {
+            return view('siswa.dasboard');
+        } else {
+            if (Auth::guard('petugas')->user()) {
+                return view('admin.dashboard');
+            }
+        }
     }
 
     public function DataSiswa()
@@ -36,4 +43,10 @@ class PageController extends Controller
     {
         return view('admin.data-kelas');
     }
+
+    public function Pembayaran()
+    {
+        return view('admin.pembayaran-spp');
+    }
+
 }

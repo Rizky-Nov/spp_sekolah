@@ -5,15 +5,21 @@ namespace App\Http\Livewire\DataSiswa;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\Spp;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use App\Traits\ListenerTrait;
+use ListenerTrait as GlobalListenerTrait;
 
 class CreateDataSiswa extends Component
 {
+    
+
     public $nisn;
     public $nis;
     public $namasiswa;
     public $alamat;
     public $notelp;
+    public $password;
 
     public $namakelas;
     public $jurusan;
@@ -56,12 +62,13 @@ class CreateDataSiswa extends Component
             'nama' => $this->namasiswa,
             'alamat' => $this->alamat,
             'no_telp' => $this->notelp,
+            'password' => bcrypt($this->password),
             'kelas_id' => $this->kelas_id,
             'spp_id' => 1,
         ]);
 
         if ($siswa) {
-            $this->emit('berhasil', ['success', "Siswa Berhasil Ditambahkan"]);
+            $this->emit('toastify', ['success', "Siswa Berhasil Ditambahkan"]);
         } else {
             $this->emit('gagal', ['danger', "Data Tidak Dapat Ditambahkan"]);
         }

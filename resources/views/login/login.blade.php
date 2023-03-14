@@ -25,18 +25,18 @@
                             <span class="text-s-medium text-neutral-60">harap login dengan benar, sesuai ketentuan !</span>
                         </div>
 
-                        <form action="" class="w-100 d-flex flex-column" style="gap: 18px">
+                        <form action="/loginAksi" method="POST" class="w-100 d-flex flex-column" style="gap: 18px">
                             @csrf
 
                             <div class="form-group">
                               <label for="username">Username</label>
-                              <input type="text" name="" id="username" class="form-control" placeholder="masukkan username anda">
+                              <input type="text" name="username" id="username" class="form-control" placeholder="masukkan username anda">
                             </div>
 
                             
                             <div class="form-group">
                               <label for="password">Password</label>
-                              <input type="text" name="" id="password" class="form-control" placeholder="masukkan password anda">
+                              <input type="text" name="password" id="password" class="form-control" placeholder="masukkan password anda">
                             </div>
                             
                             <div class="separator w-100"></div>

@@ -37,7 +37,6 @@ class EditPetugas extends Component
     {
         $petugas = Petugas::find($this->petugas_id);
 
-        // dd($petugas);
         $petugas->update([
             'username' => $this->username,
             'password' => $this->password,

@@ -4,4 +4,5 @@
     </div>
     
     <livewire:data-siswa.edit-siswa />
+
 </x-modal>
