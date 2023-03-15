@@ -13,6 +13,7 @@ class master extends Component
      */
 
     public $master;
+    public $header;
 
     public function __construct($master = null)
     {

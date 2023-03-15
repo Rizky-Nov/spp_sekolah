@@ -12,8 +12,6 @@ use ListenerTrait as GlobalListenerTrait;
 
 class CreateDataSiswa extends Component
 {
-    
-
     public $nisn;
     public $nis;
     public $namasiswa;

@@ -6,22 +6,22 @@
         </div>
     </div>
     
-    <div class="col-12">
-        <div class="col-12">
-            <table class="tabel-siswa">
-                <thead class="tabel-head">
+    <div class="col-12 mt-4 d-flex flex-column">
+        <div class="tabel-siswa col-12">
+            <table class="col-12">
+                <thead>
                     <tr>
-                        <th class="text-neutral-10 text-l-medium">NISN</th>
-                        <th class="text-neutral-10 text-l-medium">NIS</th>
-                        <th class="text-neutral-10 text-l-medium">Nama Siswa</th>
-                        <th class="text-neutral-10 text-l-medium">Kelas</th>
-                        <th class="text-neutral-10 text-l-medium">No Telephone</th>
-                        <th class="text-neutral-10 text-l-medium">Alamat</th>
+                        <th class="text-neutral-90 text-l-medium">NISN</th>
+                        <th class="text-neutral-90 text-l-medium">NIS</th>
+                        <th class="text-neutral-90 text-l-medium">Nama Siswa</th>
+                        <th class="text-neutral-90 text-l-medium">Kelas</th>
+                        <th class="text-neutral-90 text-l-medium">No Telephone</th>
+                        <th class="text-neutral-90 text-l-medium">Alamat</th>
                         <th style=""></th>
                     </tr>
                 </thead>
             
-                <tbody class="tabel-body">
+                <tbody>
                     @foreach ($datasiswas as $datasiswa)
                         <tr>
                             <td class="text-neutral-90 text-m-regular">{{ $datasiswa->nisn }}</td>
@@ -35,6 +35,7 @@
                                     <div class="w-50">
                                         <a class="btn btn-warning" wire:click='getSiswa({{ $datasiswa->id }})' data-bs-toggle="modal" data-bs-target="#EditSiswa">Edit</a>
                                     </div>
+                                    
                                     <div class="w-50">
                                         <button class="btn btn-danger" wire:click='deletecek({{ $datasiswa->id }})'>Hapus</button>
                                     </div>

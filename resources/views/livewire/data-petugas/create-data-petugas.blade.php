@@ -25,9 +25,9 @@
               <label for="level">Level</label>
               <input type="text"  id="level" class="form-control" placeholder="masukkan level petugas">
             </div>
-
-            <div class="form-group w-100 h-100 d-flex justify-content-end align-items-end">
-                <button class="buatpetugas text-neutral-10 text-m-medium">Simpan</button>
+            
+            <div class="w-100 d-flex justify-content-end align-items-end">
+              <button class="buatpetugas text-neutral-10 text-m-medium">Simpan</button>
             </div>
         </div>
     </div>

@@ -25,4 +25,9 @@ class PembayaranSpp extends Model
     {
         return $this->belongsTo(Spp::class);
     }
+
+    public function bulan()
+    {
+        return $this->belongsTo(Bulan::class);
+    }
 }

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Bulan;
 use App\Models\Kelas;
 use App\Models\Level;
 use App\Models\Petugas;
@@ -24,6 +25,43 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Bulan::create([
+            'bulan' => 'Januari'
+        ]);
+        Bulan::create([
+            'bulan' => 'Febuari'
+        ]);
+        Bulan::create([
+            'bulan' => 'Maret'
+        ]);
+        Bulan::create([
+            'bulan' => 'April'
+        ]);
+        Bulan::create([
+            'bulan' => 'Mei'
+        ]);
+        Bulan::create([
+            'bulan' => 'Juni'
+        ]);
+        Bulan::create([
+            'bulan' => 'Juli'
+        ]);
+        Bulan::create([
+            'bulan' => 'Agustus'
+        ]);
+        Bulan::create([
+            'bulan' => 'September'
+        ]);
+        Bulan::create([
+            'bulan' => 'Oktober'
+        ]);
+        Bulan::create([
+            'bulan' => 'November'
+        ]);
+        Bulan::create([
+            'bulan' => 'Desember'
+        ]);
 
         Spp::create([
             'tahun' => '2021',

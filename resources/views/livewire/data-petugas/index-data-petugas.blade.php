@@ -39,6 +39,8 @@
             </tbody>
         </table>
         
+        <div class="separator w-100 mt-5"></div>
+
         <div class="col-11" style="margin-top: 24px">
             <span class="header-s text-neutral-90">Data Petugas</span>
             

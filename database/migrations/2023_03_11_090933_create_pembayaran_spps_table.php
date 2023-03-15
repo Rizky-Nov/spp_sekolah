@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('petugas_id')->constrained();
             $table->foreignId('siswa_id')->constrained();
             $table->foreignId('spp_id')->constrained();
+            $table->foreignId('bulan_dibayar')->constrained()->references('id')->on('bulans');
             $table->date('tgl_bayar');
-            $table->string('bulan_dibayar');
             $table->string('tahun_dibayar');
             $table->integer('jumlah_bayar');
             $table->timestamps();

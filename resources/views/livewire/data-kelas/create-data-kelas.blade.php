@@ -3,13 +3,13 @@
     <div class="d-flex flex-column" style="gap: 48px; margin-top: 28px">
         <div class="input-petugas col-12 w-100 d-flex">
             <div class="form-group w-100">
-              <label for="username">Username</label>
-              <input type="text" wire:model.lazy='username' id="username" class="form-control" placeholder="masukkan username petugas">
+              <label for="namakelas">Kelas</label>
+              <input type="text" wire:model.lazy='namakelas' id="namakelas" class="form-control" placeholder="masukkan kelas ">
             </div>
 
             <div class="form-group" style="width: 100% ">
-              <label for="pw">Password</label>
-              <input type="text" wire:model.lazy='password' id="pw" class="form-control" placeholder="masukkan password petugas">
+              <label for="jurusan">Kompetensi Keahlian</label>
+              <input type="text" wire:model.lazy='jurusan' id="jurusan" class="form-control" placeholder="masukkan kompetensi keahlian">
             </div>
         </div>
 

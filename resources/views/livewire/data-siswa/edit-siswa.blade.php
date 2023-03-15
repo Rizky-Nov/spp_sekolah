@@ -34,7 +34,7 @@
         <div class="input-siswa col-12 w-100 d-flex">
             <div class="form-group w-100">
                 <label for="keahlian">Kepetensi Keahlian</label>
-                <input type="text" wire:model.lazy='jurusan' id="keahlian" class="form-control" placeholder="masukkan jurusan siswa">
+                <input type="text" wire:model.lazy='namakelas' id="keahlian" class="form-control" placeholder="masukkan jurusan siswa">
             </div>
         </div>
 

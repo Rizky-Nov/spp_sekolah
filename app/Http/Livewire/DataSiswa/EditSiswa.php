@@ -45,6 +45,8 @@ class EditSiswa extends Component
         $this->namasiswa = $siswa->nama;
         $this->alamat = $siswa->alamat;
         $this->notelp = $siswa->no_telp;
+        $this->namakelas = $siswa->kelas->nama_kelas . " ( " . $siswa->kelas->kompetensi_keahlian . " )";
+        $this->tahun_spp = $siswa->spp->tahun;
         
     }
 
@@ -62,6 +64,7 @@ class EditSiswa extends Component
 
         if ($siswa) {
             $this->emit('berhasil', ['success', "Berhasil"]);
+            
         } else {
             $this->emit('gagal', ['danger', "Gagal"]);
         }
