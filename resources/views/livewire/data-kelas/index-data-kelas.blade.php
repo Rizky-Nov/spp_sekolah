@@ -5,18 +5,20 @@
         </div>
     </div>
 
+
     <div class="col-12">
-        <table class="col-12 tabel-petugas flex-column">
-            <thead class="head-petugas">
-                <tr class="w-100">
-                    <th class="text-neutral-10 text-l-medium">Nama Kelas</th>
-                    <th class="text-neutral-10 text-l-medium">Kompetensi Keahlian</th>
-                    <th style="width: 180px"></th>
-                </tr>
-            </thead>
-        
-            <tbody style="padding: 0px 14px">
-                @foreach ($datakelases as $datakelas)
+        <div class="tabel-siswa col-12">
+            <table class="col-12">
+                <thead>
+                    <tr class="w-100">
+                        <th class="text-neutral-90 text-l-medium">Nama Kelas</th>
+                        <th class="text-neutral-90 text-l-medium">Kompetensi Keahlian</th>
+                        <th style="width: 180px"></th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    @foreach ($datakelases as $datakelas)
                     <tr>
                         <td class="text-neutral-90 text-m-regular">{{ $datakelas->nama_kelas }}</td>
                         <td class="text-neutral-90 text-m-regular">{{ $datakelas->kompetensi_keahlian }}</td>
@@ -28,8 +30,9 @@
                         </td>
                     </tr>
                 @endforeach
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
         
         <div class="col-11" style="margin-top: 24px">
             <span class="header-s text-neutral-90">Data Kelas</span>

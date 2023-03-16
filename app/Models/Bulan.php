@@ -13,6 +13,6 @@ class Bulan extends Model
 
     public function bulan()
     {
-        return $this->hasMany(PembayaranSpp::class);
+        return $this->hasMany(PembayaranSpp::class, 'bulan_dibayar');
     }
 }

@@ -3,6 +3,6 @@
 
 <x-master master="Pembayaran SPP">
     
-    <livewire:transaksi.index-spp />
+    <livewire:transaksi.index-spp-pembayaran />
 
 </x-master>

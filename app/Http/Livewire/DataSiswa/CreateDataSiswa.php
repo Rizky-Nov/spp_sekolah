@@ -3,15 +3,18 @@
 namespace App\Http\Livewire\DataSiswa;
 
 use App\Models\Kelas;
-use App\Models\Siswa;
 use App\Models\Spp;
 use Illuminate\Support\Facades\DB;
+use ListenerTrait as GlobalListenerTrait;
+use Illuminate\Support\Str;
+use App\Models\Siswa;
 use Livewire\Component;
 use App\Traits\ListenerTrait;
-use ListenerTrait as GlobalListenerTrait;
 
 class CreateDataSiswa extends Component
 {
+    use ListenerTrait;
+
     public $nisn;
     public $nis;
     public $namasiswa;
@@ -19,41 +22,78 @@ class CreateDataSiswa extends Component
     public $notelp;
     public $password;
 
-    public $namakelas;
-    public $jurusan;
+    public $kelas;
+    public $spp;
 
-    public $kelas_id;
-    public $spp_id;
-    public $tahun_spp;
+    protected $listeners = [
+        'setSiswa',
+        'setKelas',
+        'setSpp',
+    ];
 
-    
+    protected $rules = [
+        'nisn' => 'required|numeric|min:5',
+        'nis' => 'required|numeric|min:5',
+        'namasiswa' => 'required|min:5',
+        'alamat' => 'required|min:5',
+        'notelp' => 'required|numeric|min:5',
+        'password' => 'required|min:5',
+    ];
+
+    protected $messages = [
+        'nisn.required' => "harus masukkan data dahulu",
+        'nisn.numeric' => "harus berupa angka-angka",
+        'nisn.min:5' => "tidak sesuai minimal karakter",
+        
+        'nis.required' => "harus masukkan data dahulu",
+        'nis.numeric' => "harus berupa angka-angka",
+        'nis.min:5' => "tidak sesuai minimal karakter",
+        
+        'namasiswa.required' => "harus masukkan data dahulu",
+        'namasiswa.min:5' => "tidak sesuai minimal karakter",
+        
+        'alamat.required' => "harus masukkan data dahulu",
+        'alamat.min:5' => "tidak sesuai minimal karakter",
+        
+        'notelp.required' => "harus masukkan data dahulu",
+        'notelp.min:5' => "tidak sesuai minimal karakter",
+        
+        'password.required' => "harus masukkan data dahulu",
+        'password.min:5' => "tidak sesuai minimal karakter",
+    ];
 
     public function render()
     {
-        // $this->kelas_id = Kelas::orderBy('nama_kelas', 'asc')->first()->id();
-        // $this->spp_id = Spp::orderBy('tahun', 'asc')->first()->id();
-
         return view('livewire.data-siswa.create-data-siswa'); 
-        // [
-        //     'spps' = Spp::orderBy('tahun', 'asc')->first()->id();
-        // ]);
     }
 
-    // public function updated($propertyName)
-    // {
-    // }
+    public function setKelas($id)
+    {
+        $kelas_id = Str::beforeLast($id, ' - ');
+        $kelas = Siswa::find($kelas_id);
+
+        $this->kelas = $kelas;
+    }
+    
+    public function setSpp($id)
+    {
+        $spp_id = Str::beforeLast($id, ' - ');
+        $spp = Siswa::find($spp_id);
+
+        $this->spp = $spp;
+    }
     
     public function store()
     {
-        // $tahunspp = Spp::where('tahun', $this->tahun_spp)->get()->id();
+        $this->validate();
 
-        $kelas = Kelas::create([
-            'nama_kelas' => $this->namakelas,
-            'kompetensi_keahlian' => $this->jurusan,
-        ]);
+        // $kelas = Kelas::create([
+        //     'nama_kelas' => $this->namakelas,
+        //     'kompetensi_keahlian' => $this->jurusan,
+        // ]);
 
-        $this->kelas_id = $kelas->id;
-
+        // $this->kelas_id = $kelas->id;
+            // dd($this->spp->id);
         $siswa = Siswa::create([
             'nisn' => $this->nisn,
             'nis' => $this->nis,
@@ -61,14 +101,14 @@ class CreateDataSiswa extends Component
             'alamat' => $this->alamat,
             'no_telp' => $this->notelp,
             'password' => bcrypt($this->password),
-            'kelas_id' => $this->kelas_id,
-            'spp_id' => 1,
+            'kelas_id' => $this->kelas->id,
+            'spp_id' => $this->spp->id,
         ]);
 
         if ($siswa) {
             $this->emit('toastify', ['success', "Siswa Berhasil Ditambahkan"]);
         } else {
-            $this->emit('gagal', ['danger', "Data Tidak Dapat Ditambahkan"]);
+            $this->emit('toastify', ['danger', "Data Error Harap Refresh"]);
         }
     }
 }

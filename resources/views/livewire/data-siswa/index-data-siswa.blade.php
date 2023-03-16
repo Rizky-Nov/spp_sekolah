@@ -1,8 +1,7 @@
 <div class="col-12 d-flex flex-column">
     <div class="col-12 d-flex justify-content-end">
         <div class="search form-group">
-            {{-- <label for=""></label> --}}
-            <input type="text" wire:model.debounce.2000ms='search' class="form-control" placeholder="Search . . . .">
+            <input type="text" wire:model.debounce.100ms='search' class="form-control" placeholder="Search . . . .">
         </div>
     </div>
     

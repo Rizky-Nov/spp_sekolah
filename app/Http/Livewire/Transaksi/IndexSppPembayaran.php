@@ -5,12 +5,11 @@ namespace App\Http\Livewire\Transaksi;
 use App\Models\Bulan;
 use App\Models\PembayaranSpp;
 use App\Models\Siswa;
-use App\Models\Spp;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
-class IndexSpp extends Component
+class IndexSppPembayaran extends Component
 {
     public $siswa;
     public $bulan_id;
@@ -20,15 +19,6 @@ class IndexSpp extends Component
     protected $listeners = [
         'setSiswa'
     ];
-
-    public function render()
-    {
-        return view('livewire.transaksi.index-spp-pembayaran', [
-            'datasiswas' => Siswa::all(),
-            'bulans' => Bulan::all(),
-            'pembayarans' => PembayaranSpp::all(),
-        ]);
-    }
 
     public function setSiswa($id)
     {
@@ -42,6 +32,11 @@ class IndexSpp extends Component
             $this->emit('toastify', ['danger', "Siswa Tidak Ada"]);
         }
     }
+
+    // public function bayarcek($id)
+    // {
+    //     $this->emit('swalConfirm', ['question', "Bayar SPP", true, 'store', $id]);
+    // }
 
     public function store($bulan)
     {
@@ -58,11 +53,26 @@ class IndexSpp extends Component
         ]);
     }
 
-    // $table->foreignId('petugas_id')->constrained();
-    // $table->foreignId('siswa_id')->constrained();
-    // $table->foreignId('spp_id')->constrained();
-    // $table->date('tgl_bayar');
-    // $table->string('bulan_dibayar');
-    // $table->string('tahun_dibayar');
-    // $table->integer('jumlah_bayar');
+    public function render()
+    {
+        if ($this->tahun == null) {
+            $this->tahun = date('Y');
+        }
+        
+        $pembayaran = PembayaranSpp::orderBy('bulan_dibayar', 'asc')->orderBy('tahun_dibayar', 'asc');
+
+        if ($this->tahun != null) {
+            $pembayaran->where('tahun_dibayar', $this->tahun);
+        }
+
+        if ($this->siswa != null) {
+            $pembayaran->where('siswa_id', $this->siswa->id);
+        }
+        
+        return view('livewire.transaksi.index-spp-pembayaran', [
+            'bulans' => Bulan::all(),
+            'pembayarans' => $pembayaran->get(),
+            'historis' => PembayaranSpp::orderByDesc('id')->get(),
+        ]);
+    }
 }

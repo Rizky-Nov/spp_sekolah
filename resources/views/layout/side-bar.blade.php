@@ -33,7 +33,9 @@
             
                     </div>
             
-                    <div class="separator w-100"></div>
+                    <div class="px-3">
+                        <div class="separator w-100"></div>
+                    </div>
             
                     <div class="menus-luar">
                         <div class="menu-menu d-flex" style="gap: 12px;">
@@ -92,10 +94,9 @@
                                     <span class="text-neutral-10 text-m-medium">Catatan</span>
                                 </div>
             
-                                <div class="collapse w-100 {{ Request::is('pembayaran')  ? 'show' : '' }}" id="catatan">
+                                <div class="collapse w-100 {{ Request::is('histori')  ? 'show' : '' }}" id="catatan">
                                     <div class="data-sidemenu d-flex flex-column" style="padding-left: 24px">
-                                        <a href="#" class="text-decoration-none">
-                                        {{-- {{ Request::is('#') ? 'active' : '' }}"> --}}
+                                        <a href="/histori" class="text-decoration-none {{ Request::is('histori') ? 'active' : '' }}">
                                             <span class="text-m-regular text-neutral-10">History Pembayaran</span>
                                         </a>
                                     </div>

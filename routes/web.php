@@ -34,7 +34,7 @@ Route::middleware('auth:petugas,siswa')->group(function () {
     
     Route::middleware('auth:petugas')->group(function () {
         Route::get('pembayaran', [PageController::class, 'Pembayaran']);
-        
+        Route::get('histori', [PageController::class, 'Histori']);
     });
 });
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\DataSiswa;
 
+use App\Models\Kelas;
 use App\Models\Siswa;
 use Livewire\Component;
 use App\Traits\ListenerTrait;
@@ -29,9 +30,11 @@ class IndexDataSiswa extends Component
         if ($this->search != null) {
             $datasiswa->where('nama' , 'like', '%'. $this->search .'%');
         }
-
+        
         return view('livewire.data-siswa.index-data-siswa', [
             'datasiswas' => $datasiswa->get(),
+            'datakelases' => Kelas::all(),
+            $this->search => "",
         ]);
     }
 

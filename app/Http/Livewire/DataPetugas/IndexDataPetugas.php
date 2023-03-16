@@ -5,6 +5,7 @@ namespace App\Http\Livewire\DataPetugas;
 use App\Models\Petugas;
 use App\Traits\ListenerTrait;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class IndexDataPetugas extends Component
 {
@@ -23,6 +24,7 @@ class IndexDataPetugas extends Component
     public function render()
     {
         $datapetugas = Petugas::orderByDesc('nama_petugas');
+        // $password = Str::mask
 
         if ($this->search != null) {
             $datapetugas->where('nama_petugas' , 'like', '%'. $this->search .'%');

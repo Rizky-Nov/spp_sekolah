@@ -49,4 +49,9 @@ class PageController extends Controller
         return view('admin.pembayaran-spp');
     }
 
+    public function Histori()
+    {
+        return view('admin.histori-pembayaran');
+    }
+
 }

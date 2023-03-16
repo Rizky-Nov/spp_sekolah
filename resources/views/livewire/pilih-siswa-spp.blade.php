@@ -1,24 +1,26 @@
-<div class="col-10">
-    <div class="pilih-siswa" style="height: 120px">
-        <div class="form-group">
-            <label for="pilih">Pilih Data Siswa</label>
-            <input type="text" id="pilih" class="form-control" placeholder="pilih siswa"
-            dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" 
-            autocapitalize="off" maxlength="2048" tabindex="1">
+<div class="col-12 d-flex" style="gap: 24px">
+    <div class="col-10">
+        <div class="pilih-siswa" style="height: 120px">
+            <div class="form-group">
+                <label for="pilih">Pilih Data Siswa</label>
+                <input type="text" id="pilih" class="form-control" placeholder="pilih siswa"
+                dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" maxlength="2048" tabindex="1">
+            </div>
         </div>
     </div>
-</div>
 
-<div class="col">
-    <div class="form-group">
-      <label for="tahunspp"></label>
-      <input type="text" id="tahunspp" class="form-control" placeholder="tahun">
+    <div class="col">
+        <div class="form-group">
+            <label for="tahunspp"></label>
+            <input type="text" id="tahunspp" class="form-control" placeholder="tahun">
+        </div>
     </div>
+    
+    @foreach ($datasiswas as $siswa)
+        <input type="hidden" class="pilih-siswa input-form" value="{{ $siswa->id . ' - ' .$siswa->nisn .' -- '. $siswa->nis .' -- '. $siswa->nama .' -- '. $siswa->kelas->nama_kelas .' '. '(' . ' ' . $siswa->kelas->kompetensi_keahlian . ' ' .')' }}">
+    @endforeach
 </div>
 
-@foreach ($datasiswas as $siswa)
-    <input type="hidden" class="pilih-siswa input-form" value="{{ $siswa->id . ' - ' .$siswa->nisn .' -- '. $siswa->nis .' -- '. $siswa->nama .' -- '. $siswa->kelas->nama_kelas .' '. '(' . ' ' . $siswa->kelas->kompetensi_keahlian . ' ' .')' }}">
-@endforeach
 
 @push('scripts')
     <script>

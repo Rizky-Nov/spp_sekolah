@@ -16,14 +16,28 @@
                     <tr>
                         <th>Tahun</th>
                         <th>Nominal</th>
+                        <th style="width: 20px"></th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    @foreach ($spps as $spp)
+                        <tr>
+                            <td>{{ $spp->tahun }}</td>
+                            <td>{{ $spp->nominal }}</td>
+                            <td>
+                                <div class="d-flex" style="gap: 12px; width: 180px">
+                                    <div class="w-50">
+                                        <a class="btn btn-warning" wire:click='getSpp({{ $spp->id }})' data-bs-toggle="modal" data-bs-target="#EditSpp">Edit</a>
+                                    </div>
+                                    
+                                    <div class="w-50">
+                                        <button class="btn btn-danger" wire:click='deletecek({{ $spp->id }})'>Hapus</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

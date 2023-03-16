@@ -110,5 +110,16 @@ class DatabaseSeeder extends Seeder
             'no_telp' => '012312312',
             'password' => bcrypt('12345'),
         ]);
+
+        Siswa::create([
+            'spp_id' => 1,
+            'kelas_id' => 1,
+            'nisn' => '123123123',
+            'nis' => '12345',
+            'nama' => 'Siapa',
+            'alamat' => 'Cimahi',
+            'no_telp' => '012312312',
+            'password' => bcrypt('12345'),
+        ]);
     }
 }
