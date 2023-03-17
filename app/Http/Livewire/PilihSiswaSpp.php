@@ -41,6 +41,7 @@ class PilihSiswaSpp extends Component
         $this->namasiswa = $siswa->nama;
         $this->alamat = $siswa->alamat;
         $this->notelp = $siswa->no_telp;
+        $this->tahun_spp = $siswa->spp->tahun;
     }
 
 }

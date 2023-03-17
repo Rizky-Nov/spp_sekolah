@@ -3,10 +3,13 @@
 namespace App\Http\Livewire\DataPetugas;
 
 use App\Models\Petugas;
+use App\Traits\ListenerTrait;
 use Livewire\Component;
 
 class EditPetugas extends Component
 {
+    use ListenerTrait;
+
     public $petugas_id;
     public $namapetugas;
     public $username;
@@ -31,6 +34,7 @@ class EditPetugas extends Component
         $this->namapetugas = $petugas->nama_petugas;
         $this->username = $petugas->username;
         $this->password = $petugas->password;
+        $this->level_id = $petugas->level->level;
     }
 
     public function update()
@@ -42,6 +46,11 @@ class EditPetugas extends Component
             'password' => $this->password,
             'nama_petugas' => $this->namapetugas,
         ]);
-        $this->emit('Berhasil', ['succes', "Berhasil"]);
+        
+        if ($petugas) {
+            $this->emit('toastify', ['success', "berhasil diupdate"]);
+        } else {
+            $this->emit('toastify', ['danger', "gagal mengupdate"]);
+        }
     }
 }

@@ -18,7 +18,7 @@
     <div class="data-menu position-relative">
         <div class="dash-data position-absolute">
             <div class="judul">
-                <span class="text-neutral-90 text-l-medium">Jumlah Siswa</span>
+                <span class="text-neutral-90 text-l-medium">Jumlah Petugas</span>
             </div>
     
             <div class="separator w-100"></div>
@@ -34,7 +34,7 @@
     <div class="data-menu position-relative">
         <div class="dash-data position-absolute">
             <div class="judul">
-                <span class="text-neutral-90 text-l-medium">Jumlah Siswa</span>
+                <span class="text-neutral-90 text-l-medium">Jumlah Pembayaran</span>
             </div>
     
             <div class="separator w-100"></div>
@@ -50,7 +50,7 @@
     <div class="data-menu position-relative">
         <div class="dash-data position-absolute">
             <div class="judul">
-                <span class="text-neutral-90 text-l-medium">Jumlah Siswa</span>
+                <span class="text-neutral-90 text-l-medium">Jumlah Petugas</span>
             </div>
     
             <div class="separator w-100"></div>
@@ -66,7 +66,7 @@
     <div class="data-menu position-relative">
         <div class="dash-data position-absolute">
             <div class="judul">
-                <span class="text-neutral-90 text-l-medium">Jumlah Siswa</span>
+                <span class="text-neutral-90 text-l-medium">Jumlah Pembayaran</span>
             </div>
     
             <div class="separator w-100"></div>

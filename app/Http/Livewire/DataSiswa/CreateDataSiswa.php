@@ -26,6 +26,7 @@ class CreateDataSiswa extends Component
     public $spp;
 
     protected $listeners = [
+        'swal', 'fresh', 'toastify',
         'setSiswa',
         'setKelas',
         'setSpp',
@@ -82,18 +83,23 @@ class CreateDataSiswa extends Component
 
         $this->spp = $spp;
     }
+
+    public function bersih()
+    {
+        $this->nisn = "";
+        $this->nis = "";
+        $this->namasiswa = "";
+        $this->alamat = "";
+        $this->notelp = "";
+        $this->password = "";
+        $this->kelas->id = "";
+        $this->spp->id = "";
+    }
     
     public function store()
     {
         $this->validate();
-
-        // $kelas = Kelas::create([
-        //     'nama_kelas' => $this->namakelas,
-        //     'kompetensi_keahlian' => $this->jurusan,
-        // ]);
-
-        // $this->kelas_id = $kelas->id;
-            // dd($this->spp->id);
+        
         $siswa = Siswa::create([
             'nisn' => $this->nisn,
             'nis' => $this->nis,
@@ -107,6 +113,7 @@ class CreateDataSiswa extends Component
 
         if ($siswa) {
             $this->emit('toastify', ['success', "Siswa Berhasil Ditambahkan"]);
+            $this->bersih();
         } else {
             $this->emit('toastify', ['danger', "Data Error Harap Refresh"]);
         }

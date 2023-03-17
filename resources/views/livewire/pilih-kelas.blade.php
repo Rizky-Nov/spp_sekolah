@@ -42,7 +42,7 @@
                         //     Livewire.emit('toastify', ['warning', 'Barang Tidak Ditemukan', 2500]);
                         //     ketik = 0;
                         // }
-                        // Kelas++;
+                        Kelas++;
                     }
                 },
                 noResults: true,
@@ -58,7 +58,7 @@
                         const selection = event.detail.selection.value;
                         const params = selection;
                         Livewire.emit('setKelas', params);
-                        autoCompleteJS.input.value = selection;
+                        autoCompleteKelas.input.value = selection;
                     }
                 }
             }
@@ -69,7 +69,7 @@
         //     }, 1500)
         // });
         Livewire.on('200', function () {
-            autoCompleteJS.input.value = '';
+            autoCompleteKelas.input.value = '';
             Livewire.emit('toastify', ['success','Ditambahkan', 2000]);
         })
     </script>

@@ -1,7 +1,7 @@
 <form wire:submit.prevent='store'>
     @csrf
     <div class="d-flex flex-column" style="gap: 40px; margin-top: 28px">
-        <div class="input-siswa col-12 w-100 d-flex">
+        <div class="input col-12 w-100 d-flex">
             <div class="form-group w-100">
                 <label for="nisn">NISN</label>
                 <input type="text" wire:model.lazy='nisn' id="nisn" class="form-control" placeholder="masukkan nisn siswa">
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="input-siswa col-12 w-100 d-flex">
+        <div class="input col-12 w-100 d-flex">
             <div class="form-group w-100">
                 <label for="nama">Nama Lengkap</label>
                 <input type="text" wire:model.lazy='namasiswa' id="nama" class="form-control" placeholder="masukkan nama lengkap siswa">
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="input-siswa col-12 w-100 d-flex">
+        <div class="input col-12 w-100 d-flex">
             <div class="form-group" style="width: 720px">
               <label for="pw">Password</label>
               <input type="text"  id="pw" wire:model.lazy='password' class="form-control" placeholder="masukkan password siswa">
@@ -55,6 +55,7 @@
             </div>
         </div>
 
+        
         <livewire:pilih-kelas />
 
         <livewire:pilih-spp />

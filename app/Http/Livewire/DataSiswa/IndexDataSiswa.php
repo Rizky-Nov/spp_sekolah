@@ -20,6 +20,7 @@ class IndexDataSiswa extends Component
     ];
 
     protected $listeners = [
+        'swal', 'fresh', 'toastify',
         'deleteSiswa',
     ];
 
@@ -54,6 +55,7 @@ class IndexDataSiswa extends Component
 
         if ($siswa) {
             $siswa->delete();
+            $this->emit('toastify', ['success', "data dihapus"]);
         }
     }
 }

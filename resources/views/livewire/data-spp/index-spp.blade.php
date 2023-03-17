@@ -10,12 +10,12 @@
     </div>
 
     <div class="col-12 d-flex flex-column">
-        <div class="col-10">
+        <div class="tabel col-10 mt-4">
             <table class="col-12">
-                <thead>
+                <thead class="head">
                     <tr>
-                        <th>Tahun</th>
-                        <th>Nominal</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Tahun</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Nominal</th>
                         <th style="width: 20px"></th>
                     </tr>
                 </thead>
@@ -23,8 +23,8 @@
                 <tbody>
                     @foreach ($spps as $spp)
                         <tr>
-                            <td>{{ $spp->tahun }}</td>
-                            <td>{{ $spp->nominal }}</td>
+                            <td class="text-neutral-90 text-m-regular">{{ $spp->tahun }}</td>
+                            <td class="text-neutral-90 text-m-regular">{{ $spp->nominal }}</td>
                             <td>
                                 <div class="d-flex" style="gap: 12px; width: 180px">
                                     <div class="w-50">
@@ -45,25 +45,8 @@
         <div class="col-11" style="margin-top: 24px">
             <span class="header-s text-neutral-90">Data SPP</span>
             
-            <form action="">
-                <div class="d-flex flex-column" style="gap: 48px; margin-top: 28px">
-                    <div class="input-siswa col-12 w-100 d-flex">
-                        <div class="form-group w-100">
-                          <label for="tahun">Tahun</label>
-                          <input type="text" name="" id="tahun" class="form-control" placeholder="tahun spp">
-                        </div>
-
-                        <div class="form-group" style="width: 520px">
-                          <label for="nominal">Nominal</label>
-                          <input type="text" name="" id="nominal" class="form-control" placeholder="nominal spp">
-                        </div>
-                    </div>
-
-                    <div class="w-100 d-flex justify-content-end align-items-end h-100">
-                        <button type="submit" class="buatsiswa text-neutral-10 text-m-medium">Simpan</button>
-                    </div>
-                </div>
-            </form>
+            <livewire:data-spp.create-spp />
+            
         </div>
     </div>
 </div>

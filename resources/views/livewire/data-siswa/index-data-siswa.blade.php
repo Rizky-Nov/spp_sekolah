@@ -6,17 +6,17 @@
     </div>
     
     <div class="col-12 mt-4 d-flex flex-column">
-        <div class="tabel-siswa col-12">
+        <div class="tabel col-12">
             <table class="col-12">
-                <thead>
+                <thead class="head">
                     <tr>
-                        <th class="text-neutral-90 text-l-medium">NISN</th>
-                        <th class="text-neutral-90 text-l-medium">NIS</th>
-                        <th class="text-neutral-90 text-l-medium">Nama Siswa</th>
-                        <th class="text-neutral-90 text-l-medium">Kelas</th>
-                        <th class="text-neutral-90 text-l-medium">No Telephone</th>
-                        <th class="text-neutral-90 text-l-medium">Alamat</th>
-                        <th style=""></th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">NISN</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">NIS</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Nama Siswa</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Kelas</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">No Telephone</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Alamat</th>
+                        <th style="width: 20px"></th>
                     </tr>
                 </thead>
             

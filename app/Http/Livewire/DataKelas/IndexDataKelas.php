@@ -13,6 +13,7 @@ class IndexDataKelas extends Component
     public $search;
 
     protected $listeners = [
+        'swal', 'fresh', 'toastify',
         'deleteKelas'
     ];
 
@@ -49,6 +50,9 @@ class IndexDataKelas extends Component
 
         if ($kelas) {
             $kelas->delete();
+            $this->emit('toastify', ['success', "berhasil dihapus"]);
+        } else {
+            $this->emit('toastify', ['danger', "gagal menghapus"]);
         }
     }
 }

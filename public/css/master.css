@@ -5,9 +5,20 @@
 
 .header {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     height: 32px;
     margin-top: 18px;
     
+}
+
+.foto-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 100px;
+    height: 36px;
+    width: 36px;
+    background: #FFFFFF;
 }

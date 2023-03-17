@@ -9,7 +9,7 @@
     border-radius: 100px;
 }
 
-.input-siswa {
+.input {
     gap: 24px;
     height: 36px;
 }
@@ -22,16 +22,17 @@
     height: 36px;
 }
 
-.tabel-siswa {
+.tabel {
     border: 1px solid #C2C2C2;
-    padding: 12px;
     height: 420px;
+    padding: 12px;
     border-radius: 12px;
 }
 
-.petugas-head {
-    border-radius: 12px 12px 0 0;
-    background: linear-gradient(90deg, #FFA8A8 0%, #FF6D6D 64.06%);
+.head {
+    /* background: linear-gradient(90deg, #FFA8A8 0%, #FF6D6D 64.06%); */
+    /* border-radius: 12px 12px 0 0; */
+    border-bottom: 1px solid #C2C2C2;
     height: 48px;
     padding-left: 12px;
     padding-right: 12px;

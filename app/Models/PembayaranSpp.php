@@ -28,6 +28,6 @@ class PembayaranSpp extends Model
 
     public function bulan()
     {
-        return $this->belongsTo(Bulan::class, 'id');
+        return $this->belongsTo(Bulan::class, 'bulan_dibayar');
     }
 }

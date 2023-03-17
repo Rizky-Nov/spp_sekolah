@@ -42,15 +42,20 @@ class IndexSppPembayaran extends Component
     {
         $petugas = Auth::guard('petugas')->user()->id;
 
-        PembayaranSpp::create([
-            'petugas_id' => $petugas,
-            'siswa_id' => $this->siswa->id,
-            'spp_id' => $this->siswa->spp->id,
-            'tgl_bayar' => date('Y-m-d'),
-            'bulan_dibayar' => $bulan,
-            'tahun_dibayar' => $this->siswa->spp->tahun,
-            'jumlah_bayar' => $this->siswa->spp->nominal,
-        ]);
+        if ($this->siswa != null) {
+            PembayaranSpp::create([
+                'petugas_id' => $petugas,
+                'siswa_id' => $this->siswa->id,
+                'spp_id' => $this->siswa->spp->id,
+                'tgl_bayar' => date('Y-m-d'),
+                'bulan_dibayar' => $bulan,
+                'tahun_dibayar' => $this->siswa->spp->tahun,
+                'jumlah_bayar' => $this->siswa->spp->nominal,
+            ]);
+        } else {
+            $this->emit('toastify', ['danger', "belum pilih siswa"]);
+        }
+
     }
 
     public function render()
@@ -59,8 +64,9 @@ class IndexSppPembayaran extends Component
             $this->tahun = date('Y');
         }
         
-        $pembayaran = PembayaranSpp::orderBy('bulan_dibayar', 'asc')->orderBy('tahun_dibayar', 'asc');
+        $pembayaran = PembayaranSpp::orderByDesc('bulan_dibayar');
 
+        // dd($pembayaran->get());
         if ($this->tahun != null) {
             $pembayaran->where('tahun_dibayar', $this->tahun);
         }
@@ -70,8 +76,8 @@ class IndexSppPembayaran extends Component
         }
         
         return view('livewire.transaksi.index-spp-pembayaran', [
-            'bulans' => Bulan::all(),
             'pembayarans' => $pembayaran->get(),
+            'bulans' => Bulan::all(),
             'historis' => PembayaranSpp::orderByDesc('id')->get(),
         ]);
     }

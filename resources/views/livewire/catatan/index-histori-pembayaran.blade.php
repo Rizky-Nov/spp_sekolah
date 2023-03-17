@@ -21,6 +21,19 @@
                         </td>
                     </tr>
                 @else
+                    {{-- @if (Auth::guard('siswa')->user()->siswa->id)
+                        @foreach ($siswahistori as $histori)
+                            <tr>
+                                <td class="text-neutral-90 text-m-medium">{{ $history->siswa->nis }}</td>
+                                <td class="text-neutral-90 text-m-medium">{{ $history->siswa->nama }}</td>
+                                <td class="text-neutral-90 text-m-medium">{{ $history->siswa->kelas->nama_kelas . " ( " . $history->siswa->kelas->kompetensi_keahlian . " )" }}</td>
+                                <td class="text-neutral-90 text-m-medium">{{ $history->tahun_dibayar }}</td>
+                                <td class="text-neutral-90 text-m-medium">{{ $history->bulan->bulan }}</td>
+                                <td class="text-neutral-90 text-m-medium">{{ $history->jumlah_bayar }}</td>
+                            </tr>
+                        @endforeach
+                    @else
+                    @endif --}}
                     <tr>
                         <td class="text-neutral-90 text-m-medium">{{ $history->siswa->nis }}</td>
                         <td class="text-neutral-90 text-m-medium">{{ $history->siswa->nama }}</td>

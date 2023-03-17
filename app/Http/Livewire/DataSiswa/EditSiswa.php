@@ -5,10 +5,13 @@ namespace App\Http\Livewire\DataSiswa;
 use App\Models\Kelas;
 use App\Models\Siswa;
 use App\Models\Spp;
+use App\Traits\ListenerTrait;
 use Livewire\Component;
 
 class EditSiswa extends Component
 {
+    use ListenerTrait;
+
     public $siswa_id;
     public $nisn;
     public $nis;
@@ -29,10 +32,7 @@ class EditSiswa extends Component
 
     public function render()
     {
-        return view('livewire.data-siswa.edit-siswa', [
-            'kelases' => Kelas::get(),
-            'spps' => Spp::get(),
-        ]);
+        return view('livewire.data-siswa.edit-siswa');
     }
 
     public function getSiswa($id)
@@ -63,11 +63,9 @@ class EditSiswa extends Component
         ]);
 
         if ($siswa) {
-            $this->emit('berhasil', ['success', "Berhasil"]);
-            
+            $this->emit('toastify', ['success', "berhasil diupdate"]);
         } else {
-            $this->emit('gagal', ['danger', "Gagal"]);
-        }
-        
+            $this->emit('toastify', ['danger', "update gagal"]);
+        } 
     }
 }

@@ -14,6 +14,7 @@ class IndexDataPetugas extends Component
     public $search;
 
     protected $listeners = [
+        'swal', 'fresh', 'toastify',
         'deletePetugas'
     ];
 

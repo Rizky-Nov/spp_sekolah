@@ -58,7 +58,7 @@
 
 .data-menuutama:hover {
     background: #FFFFFF;
-    border-radius: 12px 0 0 12px;
+    border-radius: 12px 8px 42px 12px;
 }
 
 .data-menuutama:hover span {
@@ -79,13 +79,13 @@
 .data-sidemenu a {
     display: flex;
     align-items: center;
-    padding-left: 24px;
+    padding-left: 12px;
     height: 36px;
 }
 
 .data-sidemenu a.active {
     background: #FFFFFF;
-    border-radius: 12px 0 0 12px;
+    border-radius: 12px 8px 42px 12px;
     height: 48px;
 }
 
@@ -95,7 +95,7 @@
 
 .data-sidemenu a:hover {
     background: #FFFFFF;
-    border-radius: 12px 0 0 12px;
+    border-radius: 12px 8px 42px 12px;
     height: 48px;
 }
 

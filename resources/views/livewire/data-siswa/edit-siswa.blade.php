@@ -1,7 +1,7 @@
 <form wire:submit.prevent='update'>
     @csrf
     <div class="d-flex flex-column" style="gap: 48px; margin-top: 28px">
-        <div class="input-siswa col-12 w-100 d-flex">
+        <div class="input col-12 w-100 d-flex">
             <div class="form-group w-100">
                 <label for="nisn">NISN</label>
                 <input type="text" wire:model.lazy='nisn' id="nisn" class="form-control" placeholder="masukkan nisn siswa">
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="input-siswa col-12 w-100 d-flex">
+        <div class="input col-12 w-100 d-flex">
             <div class="form-group w-100">
                 <label for="nama">Nama Lengkap</label>
                 <input type="text" wire:model.lazy='namasiswa' id="nama" class="form-control" placeholder="masukkan nama lengkap siswa">
@@ -31,7 +31,7 @@
             <textarea wire:model.lazy='alamat' class="w-100 p-2" id="alamat" rows="4" placeholder="masukkan alamat siswa lengkap"></textarea>
         </div>
 
-        <div class="input-siswa col-12 w-100 d-flex">
+        <div class="input col-12 w-100 d-flex">
             <div class="form-group w-100">
                 <label for="keahlian">Kepetensi Keahlian</label>
                 <input type="text" wire:model.lazy='namakelas' id="keahlian" class="form-control" placeholder="masukkan jurusan siswa">
@@ -44,7 +44,7 @@
         </div>
 
         <div class="col-12 d-flex justify-content-end align-items-center">
-            <button class="buatsiswa text-neutral-10 text-m-medium">Simpan</button>
+            <button class="buatsiswa text-neutral-10 text-m-medium" data-bs-dismiss="modal">Simpan</button>
         </div>
     </div>
 </form>

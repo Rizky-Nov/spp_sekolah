@@ -9,14 +9,14 @@
     </div>
     
     <div class="col-12">
-        <div class="tabel-siswa col-12">
+        <div class="tabel col-12 mt-4">
             <table class="col-12">
-                <thead>
+                <thead class="head">
                     <tr class="w-100">
-                        <th class="text-neutral-10 text-l-medium">Nama Petugas</th>
-                        <th class="text-neutral-10 text-l-medium">Username</th>
-                        <th class="text-neutral-10 text-l-medium">Password</th>
-                        <th class="text-neutral-10 text-l-medium">Level</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Nama Petugas</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Username</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Password</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Level</th>
                         <th style="width: 180px"></th>
                     </tr>
                 </thead>
@@ -26,7 +26,7 @@
                         <tr>
                             <td class="text-neutral-90 text-m-regular">{{ $datapetugas->nama_petugas }}</td>
                             <td class="text-neutral-90 text-m-regular">{{ $datapetugas->username }}</td>
-                            <td class="text-neutral-90 text-m-regular">{{ $datapetugas->password }}</td>
+                            <td class="text-neutral-90 text-m-regular">***********************</td>
                             <td class="text-neutral-90 text-m-regular">{{ $datapetugas->level->level }}</td>
                             <td>
                                 <div class="d-flex" style="gap: 24px; width: 180px">

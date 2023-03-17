@@ -54,4 +54,9 @@ class PageController extends Controller
         return view('admin.histori-pembayaran');
     }
 
+    public function CetakLaporan()
+    {
+        return view('admin.cetak-laporan-pembayaran');
+    }
+
 }

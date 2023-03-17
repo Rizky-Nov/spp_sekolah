@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/data-siswa.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/data-petugas.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/table.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pembayaran.css') }}">
     
     <link rel="stylesheet" href="{{ asset('vendor/sweetAlert/sweetalert2.min.css') }}">
@@ -22,6 +21,7 @@
     <title>{{ $master }} | SPP</title>
 </head>
 <body style="background: #FFFFFF">
+
     <div class="col-12 d-flex position-relative">
         <div class="atas col-12"></div>
 
@@ -70,7 +70,7 @@
 
     <script src="{{ asset('vendor/toastify/toastify.min.js') }}">
     
-    </script>    
+    </script>
 
     @include('alert.sweet-alert')
     @include('components.toast')

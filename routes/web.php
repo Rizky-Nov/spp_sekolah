@@ -23,7 +23,9 @@ Route::middleware('guest:petugas,siswa')->group(function () {
 
 Route::middleware('auth:petugas,siswa')->group(function () {
     Route::get('logout', [AuthController::class, 'logout']);
+    
     Route::get('home', [PageController::class, 'Dashboard']);
+    Route::get('histori', [PageController::class, 'Histori']);
     
     Route::middleware('IsAdmin')->group(function () {
         Route::get('data-siswa', [PageController::class, 'DataSiswa']);
@@ -34,7 +36,7 @@ Route::middleware('auth:petugas,siswa')->group(function () {
     
     Route::middleware('auth:petugas')->group(function () {
         Route::get('pembayaran', [PageController::class, 'Pembayaran']);
-        Route::get('histori', [PageController::class, 'Histori']);
+        Route::get('cetak-laporan', [PageController::class, 'CetakLaporan']);
     });
 });
 

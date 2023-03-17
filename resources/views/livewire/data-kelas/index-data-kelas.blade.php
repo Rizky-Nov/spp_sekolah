@@ -7,12 +7,12 @@
 
 
     <div class="col-12">
-        <div class="tabel-siswa col-12">
+        <div class="tabel col-12 mt-4">
             <table class="col-12">
-                <thead>
+                <thead class="head">
                     <tr class="w-100">
-                        <th class="text-neutral-90 text-l-medium">Nama Kelas</th>
-                        <th class="text-neutral-90 text-l-medium">Kompetensi Keahlian</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Nama Kelas</th>
+                        <th class="text-neutral-90 text-l-medium fw-bold">Kompetensi Keahlian</th>
                         <th style="width: 180px"></th>
                     </tr>
                 </thead>

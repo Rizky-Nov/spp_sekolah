@@ -12,7 +12,7 @@
     <div class="col">
         <div class="form-group">
             <label for="tahunspp"></label>
-            <input type="text" id="tahunspp" class="form-control" placeholder="tahun">
+            <input type="text" id="tahunspp" class="form-control" wire:model='tahun_spp' placeholder="tahun">
         </div>
     </div>
     
@@ -20,7 +20,6 @@
         <input type="hidden" class="pilih-siswa input-form" value="{{ $siswa->id . ' - ' .$siswa->nisn .' -- '. $siswa->nis .' -- '. $siswa->nama .' -- '. $siswa->kelas->nama_kelas .' '. '(' . ' ' . $siswa->kelas->kompetensi_keahlian . ' ' .')' }}">
     @endforeach
 </div>
-
 
 @push('scripts')
     <script>
