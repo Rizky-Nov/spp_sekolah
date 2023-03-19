@@ -3,6 +3,7 @@
 
 <x-master master="Cetak Laporan">
 
-    <livewire:index-cetak-laporan-bayar />
+    <livewire:cetak-laporan.index-cetak-laporan />
+    <livewire:cetak-laporan.cetak-laporan />
 
 </x-master>

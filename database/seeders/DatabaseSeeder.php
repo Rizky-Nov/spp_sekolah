@@ -65,12 +65,12 @@ class DatabaseSeeder extends Seeder
 
         Spp::create([
             'tahun' => '2021',
-            'nominal' => '210.000',
+            'nominal' => '210000',
         ]);
 
         Spp::create([
             'tahun' => '2022',
-            'nominal' => '220.000',
+            'nominal' => '220000',
         ]);
 
         Kelas::create([

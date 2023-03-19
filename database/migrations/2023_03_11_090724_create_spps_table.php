@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('spps', function (Blueprint $table) {
             $table->id();
             $table->integer('tahun');
-            $table->string('nominal');
+            $table->integer('nominal');
             $table->timestamps();
         });
     }

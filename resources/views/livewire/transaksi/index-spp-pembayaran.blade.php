@@ -148,7 +148,10 @@
                                             style="height: 40px; width: 140px; border-radius: 12px; {{ $warna }}">{{ $text }}</button>
                                         </td>
                                         <td>
-                                            <button class="btn btn-success" wire:click='store({{ $bulan->id }})'>Bayar</button>
+                                            <div class="d-flex" style="gap: 12px">
+                                                <button class="btn btn-success" wire:click='store({{ $bulan->id }})'>Bayar</button>
+                                                <button class="btn btn-info">Cetak</button>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -170,7 +173,10 @@
                                             height: 40px; width: 140px; border-radius: 12px;">Belum Bayar</button>
                                         </td>
                                         <td>
-                                            <button class="btn btn-success my-shadow-2" wire:click='store({{ $bulan->id }})'>Bayar</button>
+                                            <div class="d-flex" style="gap: 12px">
+                                                <button class="btn btn-success my-shadow-2" wire:click='store({{ $bulan->id }})'>Bayar</button>
+                                                <button class="btn btn-info my-shadow-2">Cetak</button>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -181,4 +187,22 @@
             </div>
         </div>
     </div>
+
+    <iframe id="struk" name="struk" style="display: none;"></iframe>
+    <livewire:transaksi.cetak-struk />
 </div>
+
+@push('scripts')
+    <script>
+        Livewire.on('cetak', function () {        
+            setTimeout(() => {
+                var isi = document.querySelector('#cetakStruk').innerHTML;
+                console.log(isi);
+                window.frames["struk"].document.title = document.title;
+                window.frames["struk"].document.body.innerHTML = isi;
+                window.frames["struk"].focus();
+                window.frames["struk"].print();
+            }, 500);
+        })
+    </script>
+@endpush

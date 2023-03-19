@@ -17,7 +17,7 @@
 
         <div class="col-6 d-flex justify-content-end align-items-end    ">
             <div class="col-12 d-flex justify-content-end align-items-end">
-                <button class="btn btn-warning">Cetak</button>
+                <button class="btn btn-warning" wire:click='cetak'>Cetak</button>
             </div>
         </div>
     </div>

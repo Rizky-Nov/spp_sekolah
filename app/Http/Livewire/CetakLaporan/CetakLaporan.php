@@ -1,21 +1,29 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\CetakLaporan;
 
 use App\Models\PembayaranSpp;
 use App\Traits\ListenerTrait;
 use Livewire\Component;
 
-class IndexCetakLaporanBayar extends Component
+class CetakLaporan extends Component
 {
     use ListenerTrait;
 
     public $tgl_awal;
     public $tgl_akhir;
     
+
     protected $listeners = [
-        'swal', 'fresh', 'toastify',
+        'setTanggal',
     ];
+
+    public function setTanggal($params)
+    {
+        $this->tgl_awal = $params[0];
+        $this->tgl_akhir = $params[1];
+        $this->emit('cetak');
+    }
 
     public function render()
     {
@@ -34,8 +42,8 @@ class IndexCetakLaporanBayar extends Component
             $laporan->whereDate('tgl_bayar', '<=', $this->tgl_akhir);
         }
 
-        return view('livewire.index-cetak-laporan-bayar', [
-            'historis' => $laporan->get(),
+        return view('livewire.cetak-laporan.cetak-laporan', [
+            'cetaks' => $laporan->get(),
         ]);
     }
 }

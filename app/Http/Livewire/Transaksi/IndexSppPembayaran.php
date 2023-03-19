@@ -20,6 +20,11 @@ class IndexSppPembayaran extends Component
         'setSiswa'
     ];
 
+    public function cetak()
+    {
+        $this->emit('setStruk', [$this->siswa->id]);
+    }
+
     public function setSiswa($id)
     {
         $siswa_id = Str::beforeLast($id, ' - ');
