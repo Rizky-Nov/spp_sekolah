@@ -12,7 +12,6 @@
                             <th class="text-neutral-90 header-s">{{ $siswa ? $siswa->nama : "" }}</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr>
                             <td class="text-neutral-90 text-m-medium">NISN</td>
@@ -102,7 +101,7 @@
         <div class="col">
             <div class="Spp col">
                 <div class="siswa-spp col-12 my-shadow-2">
-                    <table class="col-12">
+                    <table class="col-12" wire:poll>
                         <thead>
                             <tr>
                                 <th></th>
@@ -111,18 +110,17 @@
                                 <th style="min-width: 20px; max-width: 20px; width: 10px; "></th>
                             </tr>
                         </thead>
-    
-                        <tbody>
-                            
+                        <tbody>                            
                             @if ($siswa)
                                 @foreach ($bulans as $bulan)
                                     @php
                                         $warna = 'background: linear-gradient(180deg, #FF6D6D 37.5%, #FFA8A8 100%);';
                                         $text = 'Belum Bayar';
-                                        $id = false;
+                                        $id = 0;
                                     @endphp
 
                                     @foreach ($pembayarans as $pembayaran)
+                                    {{-- {{ $pembayaran }} --}}
                                         @if ($pembayaran->bulan_dibayar == $bulan->id)
                                             @php
                                                 $warna = 'background: lightgreen;';
@@ -131,7 +129,6 @@
                                             @endphp
                                         @endif
                                     @endforeach
-
                                     <tr>
                                         <td>
                                             <div class="form-check">
@@ -149,8 +146,8 @@
                                         </td>
                                         <td>
                                             <div class="d-flex" style="gap: 12px">
-                                                <button class="btn btn-success" wire:click='store({{ $bulan->id }})'>Bayar</button>
-                                                <button class="btn btn-info">Cetak</button>
+                                                <button class="btn btn-success" wire:click='store({{ $bulan->id }},{{ $id }})'>Bayar</button>
+                                                <button class="btn btn-info" wire:click='cetak'>Cetak</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -174,7 +171,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex" style="gap: 12px">
-                                                <button class="btn btn-success my-shadow-2" wire:click='store({{ $bulan->id }})'>Bayar</button>
+                                                <button class="btn btn-success my-shadow-2" wire:click='store({{ $bulan->id }}, 0)'>Bayar</button>
                                                 <button class="btn btn-info my-shadow-2">Cetak</button>
                                             </div>
                                         </td>

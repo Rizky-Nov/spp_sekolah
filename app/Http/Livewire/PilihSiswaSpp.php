@@ -22,10 +22,18 @@ class PilihSiswaSpp extends Component
     public $spp_id;
     public $tahun_spp;
 
+    public $tahun;
+    public function updatedTahun($value)
+    {
+        $this->emit('setTahun', $value);
+    }
     public function render()
     {
         $datasiswa = Siswa::all();
 
+        if ($this->tahun == null) {
+            $this->tahun = date('Y');
+        }
         return view('livewire.pilih-siswa-spp', [
             'datasiswas' => $datasiswa,
         ]);

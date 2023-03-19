@@ -54,7 +54,7 @@
             width: 40%
         }
     </style>
-    <div class="modal-bodyI">
+    <div class="modal-bodyI" id="isi">
         <div class="headCetak">
             <img src="{{ asset('img/tip.png') }}" alt="SMK T.I.P." width="70px" height="70px" style="position: absolute">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 20px;">
@@ -66,8 +66,8 @@
         <div class="dash"></div>
         <div class="contentCetak">
             <div style="text-align: center; font-size: 20px; margin-bottom: 20px">Bukti Pembayaran</div>
-            @if ($struk)                
-                @foreach ($struk as $p)
+            {{-- @if ($struk) --}}
+                @foreach ($struks as $p)
                 <div class="dash"></div>
                 <table>
                     <tr>
@@ -98,10 +98,24 @@
                 </div>
                 <div class="dash"></div>
                 @endforeach
-            @endif
+            {{-- @endif --}}
         </div>
         <div class="footer">
             Terima Kasih
         </div>
     </div>
+    <iframe name="printf" id="printf" class="d-none"></iframe>
 </x-modal>
+@push('scripts')
+    <script>
+        Livewire.on('cetakIni', function () {   
+            setTimeout(() => {
+                var isi = document.querySelector('#isi').innerHTML;
+                window.frames["printf"].document.title = document.title;
+                window.frames["printf"].document.body.innerHTML = isi;
+                window.frames["printf"].focus();
+                window.frames["printf"].print();
+            }, 1500);
+        });
+    </script>
+@endpush

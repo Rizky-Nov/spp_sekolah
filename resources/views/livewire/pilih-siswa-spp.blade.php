@@ -12,7 +12,7 @@
     <div class="col">
         <div class="form-group">
             <label for="tahunspp"></label>
-            <input type="text" id="tahunspp" class="form-control" wire:model='tahun_spp' placeholder="tahun">
+            <input type="number" id="tahunspp" class="form-control" wire:model='tahun' placeholder="tahun">
         </div>
     </div>
     
