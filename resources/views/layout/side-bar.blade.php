@@ -5,7 +5,7 @@
     
     @if (Auth::guard('siswa')->check())
     <div class="col-2 sidebar-luar position-fixed">
-        <div class="sidebar w-100 h-100">
+        <div class="sidebar-dalam w-100 h-100">
             <div class="logo">
     
             </div>
@@ -16,8 +16,11 @@
     
             <div class="menus-luar">
                 <div class="menu-menu d-flex" style="gap: 12px;">
-                    <div class="data-menuutama w-100">
-                        <a href="/home" class="w-100 text-decoration-none text-m-medium text-neutral-10 cursor-pointer">Dashboard</a>
+                    <div class="d-flex w-100">
+                        <div class="w-100 data-menuutama cursor-pointer {{ Request::is('home') ? 'active' : '' }}">
+                            <a href="/home" class="text-neutral-10 text-m-medium w-100
+                            text-decoration-none">Dashboard</a>
+                        </div>
                     </div>
                 </div>
                 
@@ -43,7 +46,7 @@
     @else
         @if (Auth::guard('petugas')->user()->level->level == 'admin')
             <div class="col-2 sidebar-luar position-fixed">
-                <div class="sidebar w-100 h-100">
+                <div class="sidebar-dalam w-100 h-100">
                     <div class="logo">
             
                     </div>
@@ -53,9 +56,12 @@
                     </div>
             
                     <div class="menus-luar">
-                        <div class="menu-menu d-flex" style="gap: 12px;">
-                            <div class="data-menuutama w-100">
-                                <a href="/home" class="w-100 text-decoration-none text-m-medium text-neutral-10 cursor-pointer">Dashboard</a>
+                        <div class="menu-menu w-100 d-flex">
+                            <div class="d-flex w-100">
+                                <div class="w-100 data-menuutama cursor-pointer {{ Request::is('home') ? 'active' : '' }}">
+                                    <a href="/home" class="text-neutral-10 text-m-medium w-100
+                                    text-decoration-none">Dashboard</a>
+                                </div>
                             </div>
                         </div>
             
@@ -140,7 +146,7 @@
             </div>
         @elseif (Auth::guard('petugas')->user()->level->level == 'petugas')
         <div class="col-2 sidebar-luar position-fixed">
-            <div class="sidebar w-100 h-100">
+            <div class="sidebar-dalam w-100 h-100">
                 <div class="logo">
         
                 </div>
@@ -151,8 +157,11 @@
         
                 <div class="menus-luar">
                     <div class="menu-menu d-flex" style="gap: 12px;">
-                        <div class="data-menuutama w-100">
-                            <a href="/home" class="w-100 text-decoration-none text-m-medium text-neutral-10 cursor-pointer">Dashboard</a>
+                        <div class="d-flex w-100">
+                            <div class="w-100 data-menuutama cursor-pointer {{ Request::is('home') ? 'active' : '' }}">
+                                <a href="/home" class="text-neutral-10 text-m-medium w-100
+                                text-decoration-none">Dashboard</a>
+                            </div>
                         </div>
                     </div>
                     

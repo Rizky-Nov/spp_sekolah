@@ -7,7 +7,7 @@
     width: 246px;
 }
 
-.sidebar {
+.sidebar-dalam {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -66,6 +66,19 @@
 }
 
 .data-menuutama:hover a {
+    color: #424242;
+}
+
+.data-menuutama.active {
+    display: flex;
+    align-items: center;
+    color: #424242;
+    background: #FFFFFF;
+    border-radius: 12px 8px 42px 12px;
+    height: 48px;
+}
+
+.data-menuutama.active a {
     color: #424242;
 }
 
