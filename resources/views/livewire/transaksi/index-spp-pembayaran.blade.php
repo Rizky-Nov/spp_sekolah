@@ -133,7 +133,7 @@
                                         <td>
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                <input type="checkbox" class="form-check-input" id="spp" value="" style="height: 20px; width: 20px;">
+                                                <input type="checkbox" class="form-check-input" id="spp" style="height: 20px; width: 20px;">
                                                 </label>
                                             </div>
                                         </td>
@@ -147,7 +147,7 @@
                                         <td>
                                             <div class="d-flex" style="gap: 12px">
                                                 <button class="btn btn-success" wire:click='store({{ $bulan->id }},{{ $id }})'>Bayar</button>
-                                                <button class="btn btn-info" wire:click='cetak'>Cetak</button>
+                                                <button class="btn btn-info" >Cetak</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -172,7 +172,7 @@
                                         <td>
                                             <div class="d-flex" style="gap: 12px">
                                                 <button class="btn btn-success my-shadow-2" wire:click='store({{ $bulan->id }}, 0)'>Bayar</button>
-                                                <button class="btn btn-info my-shadow-2">Cetak</button>
+                                                {{-- <button class="btn btn-info my-shadow-2">Cetak</button> --}}
                                             </div>
                                         </td>
                                     </tr>

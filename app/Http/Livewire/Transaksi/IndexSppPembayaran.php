@@ -19,6 +19,7 @@ class IndexSppPembayaran extends Component
     protected $listeners = [
         'setSiswa',
         'setTahun',
+        'cetakStruk',
     ];
     public function setTahun($value)
     {
@@ -26,10 +27,10 @@ class IndexSppPembayaran extends Component
         // dd($this->tahun);
     }
 
-    public function cetak()
-    {
-        $this->emit('setStruk', [$this->siswa->id]);
-    }
+    // public function cetak()
+    // {
+    //     $this->emit('setStruk', [$this->siswa->id]);
+    // }
 
     public function setSiswa($id)
     {
@@ -43,6 +44,13 @@ class IndexSppPembayaran extends Component
         }
         $this->render();
     }
+
+    // public function cetakStruk($id)
+    // {
+    //     $pembayaran = PembayaranSpp::orderByDesc('id')->orderByDesc('bulan_dibayar');
+
+    //     $this->emit('cetakStruk', $pembayaran->id);
+    // }
 
     // public function bayarcek($id)
     // {
@@ -64,7 +72,7 @@ class IndexSppPembayaran extends Component
                     'tahun_dibayar' => $this->tahun,
                     'jumlah_bayar' => $this->siswa->spp->nominal,
                 ]);
-                $this->emit('cetakStruk',$pembayaran->id);
+                $this->emit('cetakStruk', $pembayaran->id);
             } else {                
                 $this->emit('toastify', ['danger', "Pembayaran Telah Tersedia"]);
             }

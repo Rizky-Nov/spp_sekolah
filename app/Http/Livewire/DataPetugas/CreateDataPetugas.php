@@ -51,6 +51,8 @@ class CreateDataPetugas extends Component
 
     public function store()
     {
+        $this->validate();
+        
         $petugas = Petugas::create([
             'username' => $this->username,
             'password' => bcrypt($this->password),

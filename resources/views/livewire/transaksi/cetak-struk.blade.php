@@ -67,32 +67,32 @@
         <div class="contentCetak">
             <div style="text-align: center; font-size: 20px; margin-bottom: 20px">Bukti Pembayaran</div>
             {{-- @if ($struk) --}}
-                @foreach ($struks as $p)
+                @foreach ($struks as $s)
                 <div class="dash"></div>
                 <table>
                     <tr>
                         <td style="min-width: 25%;">No Transaksi</td>
-                        <td style="min-width: 25%;">: {{ $p->pembayaran_id }}</td>
+                        <td style="min-width: 25%;">: {{ $s->id }}</td>
                         <td style="min-width: 18%;">Tanggal</td>
-                        <td style="min-width: 32%;">: {{ $p->tgl_bayar . date(' H:i:s') }}</td>
+                        <td style="min-width: 32%;">: {{ $s->tgl_bayar . date(' H:i:s') }}</td>
                     </tr>
                     <tr>
                         <td style="min-width: 25%;">No Induk  </td>
-                        <td style="min-width: 25%;">: {{ $p->siswa->nis }}</td>
+                        <td style="min-width: 25%;">: {{ $s->siswa->nis }}</td>
                         <td style="min-width: 18%;">Kelas</td>
-                        <td style="min-width: 32%;">: {{ $p->siswa->kelas->tingkat }}</td>
+                        <td style="min-width: 32%;">: {{ $s->siswa->kelas->kompetensi_keahlian }}</td>
                     </tr>
                     <tr>
                         <td style="min-width: 25%;">Nama </td>
-                        <td style="min-width: 25%;" colspan="3">: {{ $p->siswa->nama }}</td>
+                        <td style="min-width: 25%;" colspan="3">: {{ $s->siswa->nama }}</td>
                     </tr>
                 </table>
                 <div class="transaksi">
                     <table>
                         <tr>
                             <td style="min-width: 50px">2023</td>
-                            <td style="min-width: 70px">{{ $p->bulan->nama_bulan }}</td>
-                            <td style="min-width: 70px">{{ 'Rp.' . $p->siswa->spp->nominal }}</td>
+                            <td style="min-width: 70px">{{ $s->bulan->bulan }}</td>
+                            <td style="min-width: 70px">{{ 'Rp.' . $s->siswa->spp->nominal }}</td>
                         </tr>
                     </table>
                 </div>

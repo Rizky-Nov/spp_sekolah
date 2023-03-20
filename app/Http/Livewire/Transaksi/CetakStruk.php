@@ -55,7 +55,7 @@ class CetakStruk extends Component
             $pembayaran->where('siswa_id', $this->siswa->id);
         }
         return view('livewire.transaksi.cetak-struk', [
-            'struks' => $pembayaran->get(),
+            'struks' => $pembayaran->limit(1)->get(),
             'bulans' => Bulan::all(),
         ]);
     }
