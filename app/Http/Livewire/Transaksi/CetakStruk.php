@@ -18,7 +18,7 @@ class CetakStruk extends Component
     // public $pembayaran;
 
     protected $listeners = [
-        'setStruk',
+        // 'setStruk',
         'cetakStruk',
     ];
 
@@ -32,11 +32,11 @@ class CetakStruk extends Component
         $this->emit('cetakIni');
     }
 
-    public function setStruk()
-    {
+    // public function setStruk()
+    // {
         
-        $this->emit('cetak');
-    }
+    //     $this->emit('cetak');
+    // }
 
     public function render()
     {

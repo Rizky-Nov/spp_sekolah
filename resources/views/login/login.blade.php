@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/side-bar.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/toastify/toastify.min.css') }}">
 
     <title>Login | SPP</title>
 </head>
@@ -36,7 +37,7 @@
                             
                             <div class="form-group">
                               <label for="password">Password</label>
-                              <input type="text" name="password" id="password" class="form-control" placeholder="masukkan password anda">
+                              <input type="password" name="password" id="password" class="form-control" placeholder="masukkan password anda">
                             </div>
                             
                             <div class="separator w-100"></div>
@@ -55,5 +56,11 @@
         <div class="col-7 kiri-login"></div>
         <div class="col-5" style="height: 100vh;"></div>
     </div>
+
+    <script src="{{ asset('vendor/toastify/toastify.min.js') }}">
+    
+    </script>
+
+    @include('components.toast')
 </body>
 </html>

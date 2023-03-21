@@ -8,6 +8,10 @@
                   <input type="date" wire:model.lazy='tgl_awal' id="tgl-awal" class="form-control" >
                 </div>
 
+                <div class="h-100">
+                    <span>s/d</span>
+                </div>
+
                 <div class="form-group w-100" style="width: 120px; height: 48px;">
                   <label for="tgl-akhir"></label>
                   <input type="date" wire:model.lazy='tgl_akhir' id="tgl-akhir" class="form-control" >
@@ -53,11 +57,18 @@
                             <td class="text-neutral-90 text-m-medium">{{ $history->siswa->kelas->nama_kelas . " ( " . $history->siswa->kelas->kompetensi_keahlian . " )" }}</td>
                             <td class="text-neutral-90 text-m-medium">{{ $history->tahun_dibayar }}</td>
                             <td class="text-neutral-90 text-m-medium">{{ $history->bulan->bulan }}</td>
-                            <td class="text-neutral-90 text-m-medium">{{ $history->jumlah_bayar }}</td>
+                            <td class="text-neutral-90 text-m-medium">Rp. {{ number_format($history->jumlah_bayar) }}</td>
                         </tr>
                     @endif
                 @endforeach
             </tbody>
         </table>
+    </div>
+
+    <div class="position-relative col-12 d-flex" style="background: #FFFFFF">
+        <div class="position-absolute w-100 h-100" style="background: #FFFFFF">
+
+        </div>
+        <livewire:cetak-laporan.cetak-laporan >
     </div>
 </div>

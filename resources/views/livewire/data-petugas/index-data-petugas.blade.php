@@ -13,6 +13,7 @@
             <table class="col-12">
                 <thead class="head">
                     <tr class="w-100">
+                        <th class="text-neutral-90 text-l-medium fw-bold">No</th>
                         <th class="text-neutral-90 text-l-medium fw-bold">Nama Petugas</th>
                         <th class="text-neutral-90 text-l-medium fw-bold">Username</th>
                         <th class="text-neutral-90 text-l-medium fw-bold">Password</th>
@@ -24,6 +25,7 @@
                 <tbody>
                     @foreach ($datapetugases as $datapetugas)
                         <tr>
+                            <td class="text-neutral-90 text-m-medium">{{ $loop->iteration }}</td>
                             <td class="text-neutral-90 text-m-regular">{{ $datapetugas->nama_petugas }}</td>
                             <td class="text-neutral-90 text-m-regular">{{ $datapetugas->username }}</td>
                             <td class="text-neutral-90 text-m-regular">***********************</td>

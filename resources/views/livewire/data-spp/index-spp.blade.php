@@ -14,6 +14,7 @@
             <table class="col-12">
                 <thead class="head">
                     <tr>
+                        <th class="text-neutral-90 text-l-medium fw-bold">No</th>
                         <th class="text-neutral-90 text-l-medium fw-bold">Tahun</th>
                         <th class="text-neutral-90 text-l-medium fw-bold">Nominal</th>
                         <th style="width: 20px"></th>
@@ -23,8 +24,9 @@
                 <tbody>
                     @foreach ($spps as $spp)
                         <tr>
+                            <td class="text-neutral-90 text-m-medium">{{ $loop->iteration }}</td>
                             <td class="text-neutral-90 text-m-regular">{{ $spp->tahun }}</td>
-                            <td class="text-neutral-90 text-m-regular">{{ $spp->nominal }}</td>
+                            <td class="text-neutral-90 text-m-regular">Rp. {{ number_format($spp->nominal) }}</td>
                             <td>
                                 <div class="d-flex" style="gap: 12px; width: 180px">
                                     <div class="w-50">

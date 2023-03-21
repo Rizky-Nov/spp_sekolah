@@ -64,18 +64,18 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Spp::create([
-            'tahun' => '2021',
+            'tahun' => '2020',
             'nominal' => '210000',
         ]);
 
-        Spp::create([
-            'tahun' => '2022',
-            'nominal' => '220000',
-        ]);
+        // Spp::create([
+        //     'tahun' => '2022',
+        //     'nominal' => '220000',
+        // ]);
 
         Kelas::create([
-            'nama_kelas' => 'RPL',
-            'kompetensi_keahlian' => 'Rekayasa',
+            'nama_kelas' => 'XII',
+            'kompetensi_keahlian' => 'Rekayasa Perangkat Lunak',
         ]);
 
         Level::create([
@@ -88,24 +88,24 @@ class DatabaseSeeder extends Seeder
 
         Petugas::create([
             'level_id' => 1,
-            'username' => '123',
+            'username' => 'admin',
             'password' => bcrypt('123'),
             'nama_petugas' => 'admin',
         ]);
 
         Petugas::create([
             'level_id' => 2,
-            'username' => '1234',
-            'password' => bcrypt('1234'),
+            'username' => 'petugas',
+            'password' => bcrypt('123'),
             'nama_petugas' => 'petugas',
         ]);
 
         Siswa::create([
             'spp_id' => 1,
             'kelas_id' => 1,
-            'nisn' => '123123123',
+            'nisn' => '1000201002',
             'nis' => '12345',
-            'nama' => 'Siswa',
+            'nama' => 'Fauzi Rizky Noviwidiyanto',
             'alamat' => 'Cimahi',
             'no_telp' => '012312312',
             'password' => bcrypt('12345'),
@@ -114,9 +114,9 @@ class DatabaseSeeder extends Seeder
         Siswa::create([
             'spp_id' => 1,
             'kelas_id' => 1,
-            'nisn' => '123123123',
+            'nisn' => '100002010023',
             'nis' => '12345',
-            'nama' => 'Siapa',
+            'nama' => 'Gilang Ragil Santoso',
             'alamat' => 'Cimahi',
             'no_telp' => '012312312',
             'password' => bcrypt('12345'),

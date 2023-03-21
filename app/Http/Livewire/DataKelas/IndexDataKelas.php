@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\DataKelas;
 
 use App\Models\Kelas;
+use App\Models\Siswa;
 use App\Traits\ListenerTrait;
 use Livewire\Component;
 

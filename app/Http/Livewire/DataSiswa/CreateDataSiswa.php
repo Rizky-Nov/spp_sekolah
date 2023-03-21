@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use App\Models\Siswa;
 use Livewire\Component;
 use App\Traits\ListenerTrait;
+use Illuminate\Validation\Rules\Unique;
 
 class CreateDataSiswa extends Component
 {
@@ -27,14 +28,14 @@ class CreateDataSiswa extends Component
 
     protected $listeners = [
         'swal', 'fresh', 'toastify',
-        'setSiswa',
+        // 'setSiswa',
         'setKelas',
         'setSpp',
     ];
 
     protected $rules = [
-        'nisn' => 'required|numeric|min:5',
-        'nis' => 'required|numeric|min:5',
+        'nisn' => 'required|numeric|min:5|unique:siswas,nisn',
+        'nis' => 'required|numeric|min:5|unique:siswas,nis',
         'namasiswa' => 'required|min:5',
         'alamat' => 'required|min:5',
         'notelp' => 'required|numeric|min:5',
@@ -45,10 +46,12 @@ class CreateDataSiswa extends Component
         'nisn.required' => "harus masukkan data dahulu",
         'nisn.numeric' => "harus berupa angka-angka",
         'nisn.min:5' => "tidak sesuai minimal karakter",
+        'nisn.unique' => "data nisn tidak boleh sama",
         
         'nis.required' => "harus masukkan data dahulu",
         'nis.numeric' => "harus berupa angka-angka",
         'nis.min:5' => "tidak sesuai minimal karakter",
+        'nis.unique' => "data nis tidak boleh sama",
         
         'namasiswa.required' => "harus masukkan data dahulu",
         'namasiswa.min:5' => "tidak sesuai minimal karakter",
@@ -96,7 +99,7 @@ class CreateDataSiswa extends Component
         $this->spp->id = "";
     }
     
-    public function store()
+    public function storeSiswa()
     {
         $this->validate();
         

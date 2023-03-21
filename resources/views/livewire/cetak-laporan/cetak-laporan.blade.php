@@ -1,11 +1,11 @@
-<div class="col-12 hidden">
+<div class="col-12">
     <div class="col-12" id="cetakLaporan">
         <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
 
         <div class="col-12">
             <table class="col-12">
                 <thead>
-                    <tr>
+                    <tr style="height: 48px;">
                         <th>Tanggal Pembayaran</th>
                         <th>Bulan Tahun Spp</th>
                         <th>Nominal</th>
@@ -15,7 +15,7 @@
 
                 <tbody>
                     @foreach ($cetaks as $cetak)
-                        <tr>
+                        <tr style="height: 48px;">
                             <td>{{ $cetak->tgl_bayar }}</td>
                             <td>{{ $cetak->bulan->bulan . "  " . $cetak->tahun_dibayar }}</td>
                             <td>Rp.{{ number_format($cetak->jumlah_bayar) }}</td>

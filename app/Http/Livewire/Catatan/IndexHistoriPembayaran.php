@@ -10,11 +10,8 @@ class IndexHistoriPembayaran extends Component
 {
     public function render()
     {
-        // $cek = PembayaranSpp::where('id', Auth::guard('siswa')->user());
-        // dd($cek);
         return view('livewire.catatan.index-histori-pembayaran', [
-            'historis' => PembayaranSpp::orderByDesc('id')->get(),
-            // 'siswahistori' => $cek->get(),
+            'historis' => PembayaranSpp::orderBy('id', 'asc')->get(),
         ]);
 
     }

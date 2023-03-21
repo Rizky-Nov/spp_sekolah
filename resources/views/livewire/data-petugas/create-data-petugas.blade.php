@@ -30,14 +30,8 @@
         </div>
 
         <div class="input col-12 w-100 h-100 d-flex">
-            <div class="form-group" style="width: 520px">
-              <label for="level">Level</label>
-              <input type="text" wire:model.lazy='level_id' id="pw" class="form-control" placeholder="level petugas">
-              {{-- <select id="">
-                  <option value="admin">Admin</option>
-                  <option value="petugas">Petugas</option>
-              </select> --}}
-            </div>
+            
+            <livewire:pilih-level />
             
             <div class="w-100 d-flex justify-content-end align-items-end">
               <button class="buatsiswa text-neutral-10 text-m-medium">Simpan</button>

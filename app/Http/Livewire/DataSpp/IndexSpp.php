@@ -13,6 +13,7 @@ class IndexSpp extends Component
     protected $listeners = [
         'swal', 'fresh', 'toastify',
         'getSpp',
+        'deleteSpp',
     ];
 
     public function render()

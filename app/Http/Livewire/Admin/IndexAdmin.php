@@ -15,6 +15,7 @@ class IndexAdmin extends Component
             'jmlSiswas' => Siswa::count(),
             'jmlPetugas' => Petugas::count(),
             'jmlPembayaran' => PembayaranSpp::count(),
+            'total' => PembayaranSpp::sum('jumlah_bayar'),
         ]);
     }
 }

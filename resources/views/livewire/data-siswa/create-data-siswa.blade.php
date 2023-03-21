@@ -1,4 +1,4 @@
-<form wire:submit.prevent='store'>
+<form wire:submit.prevent='storeSiswa'>
     @csrf
     <div class="d-flex flex-column" style="gap: 40px; margin-top: 28px">
         <div class="input col-12 w-100 d-flex">

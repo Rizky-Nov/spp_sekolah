@@ -3,7 +3,7 @@
     <livewire:pilih-siswa-spp />
     
     <div class="col-12 d-flex" style="gap: 24px">
-        <div class="siswaSpp col-7 d-flex flex-column" style="gap: 36px">
+        <div class="siswaSpp col-8 d-flex flex-column" style="gap: 36px">
             <div class="siswa-spp my-shadow-2 w-100">
                 <table class="w-100">
                     <thead>
@@ -45,7 +45,7 @@
 
                         <tr>
                             <td class="text-neutral-90 text-m-medium">Nominal</td>
-                            <td class="text-neutral-90 text-m-regular">{{ $siswa ? $siswa->spp->nominal : "" }}</td>
+                            <td class="text-neutral-90 text-m-regular">Rp. {{ $siswa ? number_format($siswa->spp->nominal) : "" }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -64,6 +64,7 @@
                     <table class="w-100">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Nis</th>
                                 <th>Nama Siswa</th>
                                 <th>Kelas</th>
@@ -83,12 +84,13 @@
                                     </tr>
                                 @else
                                     <tr>
+                                        <td class="text-neutral-90 text-m-medium">{{ $loop->iteration }}</td>
                                         <td class="text-neutral-90 text-m-medium">{{ $history->siswa->nis }}</td>
                                         <td class="text-neutral-90 text-m-medium">{{ $history->siswa->nama }}</td>
                                         <td class="text-neutral-90 text-m-medium">{{ $history->siswa->kelas->nama_kelas . " ( " . $history->siswa->kelas->kompetensi_keahlian . " )" }}</td>
                                         <td class="text-neutral-90 text-m-medium">{{ $history->tahun_dibayar }}</td>
                                         <td class="text-neutral-90 text-m-medium">{{ $history->bulan->bulan }}</td>
-                                        <td class="text-neutral-90 text-m-medium">{{ $history->jumlah_bayar }}</td>
+                                        <td class="text-neutral-90 text-m-medium">Rp. {{ number_format($history->jumlah_bayar) }}</td>
                                     </tr>
                                 @endif
                             @endforeach
@@ -120,7 +122,6 @@
                                     @endphp
 
                                     @foreach ($pembayarans as $pembayaran)
-                                    {{-- {{ $pembayaran }} --}}
                                         @if ($pembayaran->bulan_dibayar == $bulan->id)
                                             @php
                                                 $warna = 'background: lightgreen;';
@@ -131,11 +132,11 @@
                                     @endforeach
                                     <tr>
                                         <td>
-                                            <div class="form-check">
+                                            {{-- <div class="form-check">
                                                 <label class="form-check-label">
                                                 <input type="checkbox" class="form-check-input" id="spp" style="height: 20px; width: 20px;">
                                                 </label>
-                                            </div>
+                                            </div> --}}
                                         </td>
 
                                         <td class="text-neutral-90 text-l-medium">{{ $bulan->bulan }}</td>
@@ -147,7 +148,7 @@
                                         <td>
                                             <div class="d-flex" style="gap: 12px">
                                                 <button class="btn btn-success" wire:click='store({{ $bulan->id }},{{ $id }})'>Bayar</button>
-                                                <button class="btn btn-info" >Cetak</button>
+                                                {{-- <button class="btn btn-info">Cetak</button> --}}
                                             </div>
                                         </td>
                                     </tr>
@@ -156,11 +157,11 @@
                                 @foreach ($bulans as $bulan)
                                     <tr>
                                         <td>
-                                            <div class="form-check">
+                                            {{-- <div class="form-check">
                                                 <label class="form-check-label">
                                                 <input type="checkbox" class="form-check-input" id="spp" value="" style="height: 20px; width: 20px;">
                                                 </label>
-                                            </div>
+                                            </div> --}}
                                         </td>
 
                                         <td class="text-neutral-90 text-l-medium">{{ $bulan->bulan }}</td>
@@ -185,11 +186,12 @@
         </div>
     </div>
 
-    <iframe id="struk" name="struk" style="display: none;"></iframe>
+    {{-- @include('admin.modal.modal-setuju-bayar') --}}
+    {{-- <iframe id="struk" name="struk" style="display: none;"></iframe> --}}
     <livewire:transaksi.cetak-struk />
 </div>
 
-@push('scripts')
+{{-- @push('scripts')
     <script>
         Livewire.on('cetak', function () {        
             setTimeout(() => {
@@ -202,4 +204,4 @@
             }, 500);
         })
     </script>
-@endpush
+@endpush --}}

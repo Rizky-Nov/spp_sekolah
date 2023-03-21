@@ -54,7 +54,7 @@
             width: 40%
         }
     </style>
-    <div class="modal-bodyI" id="isi">
+    <div class="modal-bodyI align-items-center" id="isi">
         <div class="headCetak">
             <img src="{{ asset('img/tip.png') }}" alt="SMK T.I.P." width="70px" height="70px" style="position: absolute">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 20px;">
@@ -69,27 +69,45 @@
             {{-- @if ($struk) --}}
                 @foreach ($struks as $s)
                 <div class="dash"></div>
-                <table>
-                    <tr>
-                        <td style="min-width: 25%;">No Transaksi</td>
-                        <td style="min-width: 25%;">: {{ $s->id }}</td>
-                        <td style="min-width: 18%;">Tanggal</td>
-                        <td style="min-width: 32%;">: {{ $s->tgl_bayar . date(' H:i:s') }}</td>
-                    </tr>
-                    <tr>
-                        <td style="min-width: 25%;">No Induk  </td>
-                        <td style="min-width: 25%;">: {{ $s->siswa->nis }}</td>
-                        <td style="min-width: 18%;">Kelas</td>
-                        <td style="min-width: 32%;">: {{ $s->siswa->kelas->kompetensi_keahlian }}</td>
-                    </tr>
-                    <tr>
-                        <td style="min-width: 25%;">Nama </td>
-                        <td style="min-width: 25%;" colspan="3">: {{ $s->siswa->nama }}</td>
-                    </tr>
-                </table>
+
+                <div class="col-12" style="border: 1px solid lightgray; padding: 12px; border-radius: 12px">
+                    <table class="col-12">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr style="height: 48px">
+                                <td>No Transaksi</td>
+                                <td>: {{ $s->id }}</td>
+                                <td>Tanggal</td>
+                                <td>: {{ $s->tgl_bayar . date(' H:i:s') }}</td>
+                            </tr>
+
+                            <tr style="height: 48px">
+                                <td>No Induk  </td>
+                                <td>: {{ $s->siswa->nis }}</td>
+                                <td>Kelas</td>
+                                <td>: {{ $s->siswa->kelas->kompetensi_keahlian }}</td>
+                            </tr>
+
+                            <tr style="height: 48px">
+                                <td>Nama </td>
+                                <td>: {{ $s->siswa->nama }}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="transaksi">
                     <table>
-                        <tr>
+                        <tr style="height: 48px">
                             <td style="min-width: 50px">2023</td>
                             <td style="min-width: 70px">{{ $s->bulan->bulan }}</td>
                             <td style="min-width: 70px">{{ 'Rp.' . $s->siswa->spp->nominal }}</td>
@@ -100,12 +118,15 @@
                 @endforeach
             {{-- @endif --}}
         </div>
-        <div class="footer">
+        <div class="footer mt-4">
             Terima Kasih
         </div>
     </div>
+
     <iframe name="printf" id="printf" class="d-none"></iframe>
+    
 </x-modal>
+
 @push('scripts')
     <script>
         Livewire.on('cetakIni', function () {   

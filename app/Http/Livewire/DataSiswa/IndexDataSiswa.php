@@ -15,13 +15,13 @@ class IndexDataSiswa extends Component
     public $siswa_id;
     public $cek = true;
     
-    protected $queryString = [
-        'search' => ['except' => '']
-    ];
-
     protected $listeners = [
         'swal', 'fresh', 'toastify',
         'deleteSiswa',
+    ];
+    
+    protected $queryString = [
+        'search' => ['except' => '']
     ];
 
     public function render()

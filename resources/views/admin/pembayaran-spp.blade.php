@@ -5,5 +5,5 @@
     
     <livewire:transaksi.index-spp-pembayaran />
     
-
+    {{-- @include('admin.modal.modal-setuju-bayar') --}}
 </x-master>

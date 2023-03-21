@@ -2,9 +2,11 @@
 
 namespace App\Http\Livewire\DataPetugas;
 
+use App\Models\Level;
 use App\Models\Petugas;
 use App\Traits\ListenerTrait;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class CreateDataPetugas extends Component
 {
@@ -14,15 +16,16 @@ class CreateDataPetugas extends Component
     public $username;
     public $password;
 
-    public $level_id;
+    public $level;
 
     protected $listeners = [
         'swal', 'fresh', 'toastify',
+        'setLevel',
     ];
 
     protected $rules = [
         'namapetugas' => 'required',
-        'username' => 'required',
+        'username' => 'required|unique:petugas,username',
         'password' => 'required',
     ];
 
@@ -30,6 +33,7 @@ class CreateDataPetugas extends Component
         'namapetugas.required' => 'harus diisi terlebih dahulu',
 
         'username.required' => 'harus diisi terlebih dahulu',
+        'username.unique ' => 'username petugas harus berbeda',
         
         'password.required' => 'harus diisi terlebih dahulu',
         
@@ -46,7 +50,15 @@ class CreateDataPetugas extends Component
         $this->username = "";
         $this->password = "";
         $this->namapetugas = "";
-        $this->level_id = "";
+        $this->level = "";
+    }
+
+    public function setLevel($id)
+    {
+        $level_id = Str::beforeLast($id, ' - ');
+        $level = Level::find($level_id);
+
+        $this->level = $level;
     }
 
     public function store()
@@ -57,7 +69,7 @@ class CreateDataPetugas extends Component
             'username' => $this->username,
             'password' => bcrypt($this->password),
             'nama_petugas' => $this->namapetugas,
-            'level_id' => $this->level_id,
+            'level_id' => $this->level->id,
         ]);
 
         if ($petugas) {

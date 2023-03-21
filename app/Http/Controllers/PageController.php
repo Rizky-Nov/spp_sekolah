@@ -51,7 +51,13 @@ class PageController extends Controller
 
     public function Histori()
     {
-        return view('admin.histori-pembayaran');
+        if (Auth::guard('siswa')->check()) {
+            return view('admin.siswa-histori');
+        } else {
+            if (Auth::guard('petugas')->user()) {
+                return view('admin.histori-pembayaran');
+            }
+        }
     }
 
     public function CetakLaporan()

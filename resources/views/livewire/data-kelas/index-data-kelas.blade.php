@@ -11,6 +11,7 @@
             <table class="col-12">
                 <thead class="head">
                     <tr class="w-100">
+                        <th class="text-neutral-90 text-l-medium fw-bold">No</th>
                         <th class="text-neutral-90 text-l-medium fw-bold">Nama Kelas</th>
                         <th class="text-neutral-90 text-l-medium fw-bold">Kompetensi Keahlian</th>
                         <th style="width: 180px"></th>
@@ -20,6 +21,7 @@
                 <tbody>
                     @foreach ($datakelases as $datakelas)
                     <tr>
+                        <td class="text-neutral-90 text-m-medium">{{ $loop->iteration }}</td>
                         <td class="text-neutral-90 text-m-regular">{{ $datakelas->nama_kelas }}</td>
                         <td class="text-neutral-90 text-m-regular">{{ $datakelas->kompetensi_keahlian }}</td>
                         <td>

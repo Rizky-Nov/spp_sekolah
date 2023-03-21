@@ -33,14 +33,14 @@
 
         <div class="input col-12 w-100 d-flex">
             <div class="form-group w-100">
-                <label for="keahlian">Kepetensi Keahlian</label>
-                <input type="text" wire:model.lazy='namakelas' id="keahlian" class="form-control" placeholder="masukkan jurusan siswa">
+                <label for="keahlian">Kelas</label>
+                <input type="text" disabled wire:model.lazy='namakelas' id="keahlian" class="form-control" placeholder="masukkan jurusan siswa">
             </div>
         </div>
 
         <div class="form-group">
           <label for="spp">Tahun Spp</label>
-          <input type="text" wire:model.lazy='tahun_spp' id="spp" class="form-control" placeholder="tahun spp">
+          <input type="text" disabled wire:model.lazy='tahun_spp' id="spp" class="form-control" placeholder="tahun spp">
         </div>
 
         <div class="col-12 d-flex justify-content-end align-items-center">

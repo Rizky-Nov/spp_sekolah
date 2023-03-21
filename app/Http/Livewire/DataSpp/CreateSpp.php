@@ -18,16 +18,17 @@ class CreateSpp extends Component
     ];
 
     protected $rules = [
-        'tahun_spp' => 'required|min:4',
-        'nominal_spp' => 'required|alpha:num',
+        'tahun_spp' => 'required|min:4|unique:spps,tahun',
+        'nominal_spp' => 'required|numeric',
     ];
 
     protected $messages = [
         'tahun_spp.required' => 'harus diisi terlebih dahulu',
         'tahun_spp.min:4' => 'minimal karakter kurang',
+        'tahun_spp.unique' => 'tahun spp harus berbeda',
 
         'nominal_spp.required' => 'harus diisi terlebih dahulu',
-        'nominal_spp.alpha:num' => 'harus berupa angka',
+        'nominal_spp.numeric' => 'harus berupa angka',
     ];
 
     public function render()
@@ -46,15 +47,15 @@ class CreateSpp extends Component
         $this->validate();
         
         $spp = Spp::create([
-            'tahun' => $this->tahun_spp,
+        'tahun' => $this->tahun_spp,
             'nominal' => $this->nominal_spp,
         ]);
 
-        if ($spp) {
+        if($spp) {
             $this->emit('toastify', ['success', "barhasil ditambahkan"]);
             $this->bersih();
         } else {
-            $this->emit('toastify', ['success', "gagal ditambahkan"]);
+            $this->emit('toastify', ['danger', "gagal ditambahkan"]);
         }
     }
 }

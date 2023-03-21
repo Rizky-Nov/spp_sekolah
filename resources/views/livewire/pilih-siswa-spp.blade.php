@@ -9,12 +9,12 @@
         </div>
     </div>
 
-    <div class="col">
+    {{-- <div class="col">
         <div class="form-group">
             <label for="tahunspp"></label>
             <input type="number" id="tahunspp" class="form-control" wire:model='tahun_spp' placeholder="tahun">
         </div>
-    </div>
+    </div> --}}
     
     @foreach ($datasiswas as $siswa)
         <input type="hidden" class="pilih-siswa input-form" value="{{ $siswa->id . ' - ' .$siswa->nisn .' -- '. $siswa->nis .' -- '. $siswa->nama .' -- '. $siswa->kelas->nama_kelas .' '. '(' . ' ' . $siswa->kelas->kompetensi_keahlian . ' ' .')' }}">

@@ -12,15 +12,15 @@
                 });
             }
         });
-        Livewire.on('swalConfirm', function (params) {
+        Livewire.on('confirmasi', function (params) {
             var [type, message, callback, url, value] = params;
             if (Array.isArray(params) && params.length == 5) {
                 Swal.fire({
                     icon: type,
                     title: message,
                     showDenyButton: true,
-                    confirmButtonText: 'Hapus',
-                    denyButtonText: 'Batalkan',
+                    confirmButtonText: 'Bayar',
+                    denyButtonText: 'Kembali',
                     focusConfirm: false,
                     html:
                         '',

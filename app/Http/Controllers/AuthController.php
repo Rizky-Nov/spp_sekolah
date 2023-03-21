@@ -27,7 +27,7 @@ class AuthController extends Controller
                 $request->session()->regenerate();
                 return redirect()->intended('/home')->with('success', "Berhasil");
             } else {
-                return redirect('/')->with('danger', "Gagal");
+                return redirect('/')->with('toastify', ['danger', "login gagal"]);
             }
         }
     }
