@@ -147,7 +147,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex" style="gap: 12px">
-                                                <button class="btn btn-success" wire:click='store({{ $bulan->id }},{{ $id }})'>Bayar</button>
+                                                <button class="btn btn-success" wire:click='konfirm({{ $bulan->id }},{{ $id }})'>Bayar</button>
                                                 {{-- <button class="btn btn-info">Cetak</button> --}}
                                             </div>
                                         </td>
@@ -172,7 +172,7 @@
                                         </td>
                                         <td>
                                             <div class="d-flex" style="gap: 12px">
-                                                <button class="btn btn-success my-shadow-2" wire:click='store({{ $bulan->id }}, 0)'>Bayar</button>
+                                                <button class="btn btn-success my-shadow-2" wire:click='konfirm({{ $bulan->id }}, 0)'>Bayar</button>
                                                 {{-- <button class="btn btn-info my-shadow-2">Cetak</button> --}}
                                             </div>
                                         </td>
@@ -188,8 +188,12 @@
 
     {{-- @include('admin.modal.modal-setuju-bayar') --}}
     {{-- <iframe id="struk" name="struk" style="display: none;"></iframe> --}}
-    <livewire:transaksi.cetak-struk />
+    {{-- <livewire:transaksi.cetak-struk /> --}}
+    {{-- <x-modal id="konfirmPembayaran">
+        <livewire:modal-create-pembayaran />
+    </x-modal> --}}
 </div>
+
 
 {{-- @push('scripts')
     <script>

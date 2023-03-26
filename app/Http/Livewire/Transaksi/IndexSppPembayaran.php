@@ -61,22 +61,11 @@ class IndexSppPembayaran extends Component
         $this->render();
     }
 
-    public function store($bulan, $id)
+    public function konfirm($bulan, $id)
     {
-        $petugas = Auth::guard('petugas')->user()->id;
-
         if ($this->siswa != null) {
             if ($id <= 0) {
-                $pembayaran = PembayaranSpp::create([
-                    'petugas_id' => $petugas,
-                    'siswa_id' => $this->siswa->id,
-                    'spp_id' => $this->siswa->spp->id,
-                    'tgl_bayar' => date('Y-m-d'),
-                    'bulan_dibayar' => $bulan,
-                    'tahun_dibayar' => $this->tahun,
-                    'jumlah_bayar' => $this->siswa->spp->nominal,
-                ]);
-                $this->emit('cetakStruk', $pembayaran->id);
+                $this->emit('konfirmPembayaran', [$bulan,$id,$this->tahun,$this->siswa->id]);
             } else {                
                 $this->emit('toastify', ['danger', "Pembayaran Telah Tersedia"]);
             }

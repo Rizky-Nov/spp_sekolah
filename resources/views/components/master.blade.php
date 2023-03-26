@@ -71,6 +71,7 @@
     <script src="{{ asset('vendor/toastify/toastify.min.js') }}">
     
     </script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 
     @include('alert.sweet-alert')
     @include('components.toast')

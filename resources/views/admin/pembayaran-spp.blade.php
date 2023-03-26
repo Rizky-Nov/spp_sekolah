@@ -6,4 +6,7 @@
     <livewire:transaksi.index-spp-pembayaran />
     
     {{-- @include('admin.modal.modal-setuju-bayar') --}}
+    <x-modal id="konfirmPembayaran">
+        <livewire:modal-create-pembayaran />
+    </x-modal>
 </x-master>

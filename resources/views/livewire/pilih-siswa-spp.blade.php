@@ -30,7 +30,6 @@
         });
 
         let ketik = 2;
-        console.log(arrayData);
         const autoCompleteJS = new autoComplete({
             selector: "#pilih",
             placeHolder: "Search Data Siswa",
