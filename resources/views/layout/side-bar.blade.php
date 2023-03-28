@@ -18,8 +18,12 @@
                 <div class="menu-menu d-flex" style="gap: 12px;">
                     <div class="d-flex w-100">
                         <div class="w-100 data-menuutama cursor-pointer {{ Request::is('home') ? 'active' : '' }}">
-                            <a href="/home" class="text-neutral-10 text-m-medium w-100
-                            text-decoration-none">Dashboard</a>
+                            <div class="d-flex w-100 cursor-pointer" style="gap: 12px;">
+                                <img src="{{ asset('icons/home.png') }}" alt="" style="width: 20px; height: 20px;">
+
+                                <a href="/home" class="text-neutral-10 text-m-medium w-100
+                                text-decoration-none">Dashboard</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -27,7 +31,10 @@
                 <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                     <div class="d-flex flex-column w-100">
                         <div class="w-100 data-menuutama cursor-pointer" data-bs-toggle="collapse" data-bs-target="#catatan">
-                            <span class="text-neutral-10 text-m-medium">Catatan</span>
+                            <div class="d-flex w-100" style="gap: 12px">
+                                <img src="{{ asset('icons/history.png') }}" alt="" style="width: 20px; height: 20px;">
+                                <span class="text-neutral-10 text-m-medium">Catatan</span>
+                            </div>
                         </div>
     
                         <div class="collapse w-100 {{ Request::is('histori')  ? 'show' : '' }}" id="catatan">
@@ -59,8 +66,12 @@
                         <div class="menu-menu w-100 d-flex">
                             <div class="d-flex w-100">
                                 <div class="w-100 data-menuutama cursor-pointer {{ Request::is('home') ? 'active' : '' }}">
-                                    <a href="/home" class="text-neutral-10 text-m-medium w-100
-                                    text-decoration-none">Dashboard</a>
+                                    <div class="d-flex" style="gap: 12px;">
+                                        <img src="{{ asset('icons/home.png') }}" alt="" style="width: 20px; height: 20px;">
+                                        
+                                        <a href="/home" class="text-neutral-10 text-m-medium w-100
+                                        text-decoration-none">Dashboard</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +79,10 @@
                         <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                             <div class="d-flex flex-column w-100">
                                 <div class="w-100 data-menuutama cursor-pointer" data-bs-toggle="collapse" data-bs-target="#data-data">
-                                    <span class="text-neutral-10 text-m-medium">Data - Data</span>
+                                    <div class="d-flex w-100" style="gap: 12px">
+                                        <img src="{{ asset('icons/data.png') }}" alt="" style="width: 20px; height: 20px;">
+                                        <span class="text-neutral-10 text-m-medium">Data - Data</span>
+                                    </div>
                                 </div>
             
                                 <div class="collapse w-100 {{ Request::is('data-siswa') || Request::is('data-petugas') || Request::is('data-kelas') || Request::is('data-spp')  ? 'show' : '' }}" id="data-data">
@@ -96,7 +110,10 @@
                         <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                             <div class="d-flex flex-column w-100">
                                 <div class="w-100 data-menuutama cursor-pointer" data-bs-toggle="collapse" data-bs-target="#pembayaran">
-                                    <span class="text-neutral-10 text-m-medium">Transaksi</span>
+                                    <div class="d-flex w-100" style="gap: 12px" >
+                                        <img src="{{ asset('icons/transaction.png') }}" alt="" style="width: 20px; height: 20px;">
+                                        <span class="text-neutral-10 text-m-medium">Transaksi</span>
+                                    </div>
                                 </div>
             
                                 <div class="collapse w-100 {{ Request::is('pembayaran')  ? 'show' : '' }}" id="pembayaran">
@@ -112,7 +129,10 @@
                         <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                             <div class="d-flex flex-column w-100">
                                 <div class="w-100 data-menuutama cursor-pointer" data-bs-toggle="collapse" data-bs-target="#catatan">
-                                    <span class="text-neutral-10 text-m-medium">Catatan</span>
+                                    <div class="d-flex w-100" style="gap: 12px">
+                                        <img src="{{ asset('icons/history.png') }}" alt="" style="width: 20px; height: 20px;">
+                                        <span class="text-neutral-10 text-m-medium">Catatan</span>
+                                    </div>
                                 </div>
             
                                 <div class="collapse w-100 {{ Request::is('histori')  ? 'show' : '' }}" id="catatan">
@@ -128,7 +148,10 @@
                         <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                             <div class="d-flex flex-column w-100">
                                 <div class="w-100 data-menuutama cursor-pointer" data-bs-toggle="collapse" data-bs-target="#laporan">
-                                    <span class="text-neutral-10 text-m-medium">Laporan</span>
+                                    <div class="d-flex w-100" style="gap: 12px">
+                                        <img src="{{ asset('icons/laporan.png') }}" alt="" style="width: 20px; height: 20px;">
+                                        <span class="text-neutral-10 text-m-medium">Laporan</span>
+                                    </div>
                                 </div>
             
                                 <div class="collapse w-100 {{ Request::is('cetak-laporan')  ? 'show' : '' }}" id="laporan">
@@ -159,8 +182,12 @@
                     <div class="menu-menu d-flex" style="gap: 12px;">
                         <div class="d-flex w-100">
                             <div class="w-100 data-menuutama cursor-pointer {{ Request::is('home') ? 'active' : '' }}">
-                                <a href="/home" class="text-neutral-10 text-m-medium w-100
-                                text-decoration-none">Dashboard</a>
+                                <div class="d-flex" style="gap: 12px;">
+                                    <img src="{{ asset('icons/home.png') }}" alt="" style="width: 20px; height: 20px;">
+                                    
+                                    <a href="/home" class="text-neutral-10 text-m-medium w-100
+                                    text-decoration-none">Dashboard</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -168,7 +195,10 @@
                     <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                         <div class="d-flex flex-column w-100">
                             <div class="w-100 data-menuutama cursor-pointer" data-bs-toggle="collapse" data-bs-target="#pembayaran">
-                                <span class="text-neutral-10 text-m-medium">Transaksi</span>
+                                <div class="d-flex w-100" style="gap: 12px" >
+                                    <img src="{{ asset('icons/transaction.png') }}" alt="" style="width: 20px; height: 20px;">
+                                    <span class="text-neutral-10 text-m-medium">Transaksi</span>
+                                </div>
                             </div>
         
                             <div class="collapse w-100 {{ Request::is('pembayaran')  ? 'show' : '' }}" id="pembayaran">
@@ -184,7 +214,10 @@
                     <div class="menu-menu d-flex flex-column" style="gap: 12px;">
                         <div class="d-flex flex-column w-100">
                             <div class="w-100 data-menuutama cursor-pointer" data-bs-toggle="collapse" data-bs-target="#catatan">
-                                <span class="text-neutral-10 text-m-medium">Catatan</span>
+                                <div class="d-flex w-100" style="gap: 12px">
+                                    <img src="{{ asset('icons/history.png') }}" alt="" style="width: 20px; height: 20px;">
+                                    <span class="text-neutral-10 text-m-medium">Catatan</span>
+                                </div>
                             </div>
         
                             <div class="collapse w-100 {{ Request::is('histori')  ? 'show' : '' }}" id="catatan">

@@ -69,6 +69,10 @@
     color: #424242;
 }
 
+.data-menuutama:hover img {
+    filter: invert(85%);
+}
+
 .data-menuutama.active {
     display: flex;
     align-items: center;
@@ -80,6 +84,10 @@
 
 .data-menuutama.active a {
     color: #424242;
+}
+
+.data-menuutama.active img {
+    filter: invert(85%);
 }
 
 
